@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import AstroForms
 
-
 /// A basic text field and label row.
 class PlainTextFieldRow: Row, ValueRow, FocusableRow {
     
