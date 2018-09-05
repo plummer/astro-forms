@@ -38,4 +38,25 @@ class PlainKitchenSinkForm: Form {
         
     }
     
+    override func rowDidEndEditing(row: AnyRow) {
+        
+        guard let tag = row.tag as? KitchenSinkTag else { return }
+        
+        switch tag {
+        case .helloWorld:
+            
+            guard let helloWorldRow = row as? PlainTextFieldRow else {
+                return
+            }
+            
+            let str = helloWorldRow.value
+            
+            print("str:", str)
+            
+            
+        }
+        
+        
+    }
+    
 }

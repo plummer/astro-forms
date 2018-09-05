@@ -60,6 +60,7 @@ extension Form: RangeReplaceableCollection {
     }
     
     public func append(_ newElement: Form.RowCollectionType.Element) {
+        
         rows.append(newElement)
         stackView.addArrangedSubview(stackWrapped(newElement.baseView))
         

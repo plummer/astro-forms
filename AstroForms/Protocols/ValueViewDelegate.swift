@@ -19,12 +19,28 @@ public protocol ValueViewDelegate: class {
     
 }
 
-extension ValueViewDelegate {
+public extension ValueViewDelegate {
     
     func valueDidEdit() {}
     
     func valueDidStartEditing() {}
     
     func valueDidEndEditing() {}
+    
+}
+
+public extension ValueViewDelegate where Self: AnyRow {
+    
+    func valueDidEdit() {
+        form?.rowDidEdit(row: self)
+    }
+    
+    func valueDidStartEditing() {
+        form?.rowDidStartEditing(row: self)
+    }
+    
+    func valueDidEndEditing() {
+        form?.rowDidEndEditing(row: self)
+    }
     
 }

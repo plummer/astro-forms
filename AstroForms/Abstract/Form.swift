@@ -20,12 +20,12 @@ open class Form: UIView {
     let stackView = UIStackView()
     
     /// The rows for the row. Access via the form collection.
-    var rows: [AnyRow] = []
+    public var rows: [AnyRow] = []
     
     /// Override this function to setup your rows with their initial state.
     /// The base implementation just clears the rows, so it is safe to
     /// call multiple times.
-    func setupRows() {
+    open func setupRows() {
         
         // Remove all existing rows and views, so this function always refreshes
         //the view entirely.
@@ -33,7 +33,7 @@ open class Form: UIView {
         
     }
     
-    func findRow<TagType: Equatable, RowType>(
+    open func findRow<TagType: Equatable, RowType>(
         tag: TagType
         ) -> RowType? {
         
@@ -68,5 +68,17 @@ open class Form: UIView {
         setupRows()
         
     }
+    
+    // MARK: Row change callbacks
+    
+    open func rowDidStartEditing(row: AnyRow) {}
+    
+    open func rowDidEndEditing(row: AnyRow) {}
+    
+    open func rowDidEdit(row: AnyRow) {}
+    
+    open func rowDidFocus(row: AnyRow) {}
+    
+    open func rowDidBlur(row: AnyRow) {}
     
 }

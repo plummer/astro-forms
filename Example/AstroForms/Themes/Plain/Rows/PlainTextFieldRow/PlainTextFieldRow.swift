@@ -101,8 +101,4 @@ class PlainTextFieldRow: Row, ValueRow, FocusableRow {
         
     }
     
-    func valueDidEndEditing() {
-        
-    }
-    
 }

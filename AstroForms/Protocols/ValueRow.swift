@@ -17,13 +17,3 @@ public protocol ValueRow: ValueViewDelegate {
     var value: Value { get set }
         
 }
-
-public extension ValueRow {
-    
-    func valueDidEdit() { }
-    
-    func valueDidStartEditing() { }
-    
-    func valueDidEndEditing() { }
-
-}
