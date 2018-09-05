@@ -230,7 +230,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				0A037D705ADDB5CA674A600D /* [CP] Embed Pods Frameworks */,
+				C738C36FB00591AB9D3FB2E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,24 +325,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A037D705ADDB5CA674A600D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AstroForms_Example/Pods-AstroForms_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AstroForms/AstroForms.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AstroForms.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AstroForms_Example/Pods-AstroForms_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1CB9EB5C72E484B9E195AD5A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,7 +349,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AstroForms_Tests/Pods-AstroForms_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AstroForms_Tests/Pods-AstroForms_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -378,7 +360,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AstroForms_Tests/Pods-AstroForms_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AstroForms_Tests/Pods-AstroForms_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C738C36FB00591AB9D3FB2E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AstroForms_Example/Pods-AstroForms_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AstroForms/AstroForms.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AstroForms.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AstroForms_Example/Pods-AstroForms_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E2121644193B3591D81EFF6F /* [CP] Check Pods Manifest.lock */ = {
