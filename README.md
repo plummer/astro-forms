@@ -7,3 +7,30 @@ An approachable iOS forms framework for building beautiful, reusable and easy to
 ## Development Status
 
 Astro Forms is not yet ready to be used in any context, the first beta will be ready ~ November 2018.
+
+### 0.0.1
+
+#### Base implementation
+
+- [x] Stackview / form rendering
+- [ ] Form submission
+- [ ] Validation
+- [ ] Accessibility
+- [ ] Documentation
+
+#### Included Row Examples
+
+- [ ] Textfield
+- [ ] Textview
+- [ ] Checkbox / switch
+- [ ] Multi checkbox
+- [ ] Multi Select Row
+- [ ] Radio
+- [ ] Multi radio
+- [ ] Push row (select)
+- [ ] Picker row
+- [ ] Date picker row
+- [ ] Segmented control row
+- [ ] Button row
+- [ ] Decorative row
+- [ ] Astro theme
