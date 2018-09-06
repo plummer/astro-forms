@@ -53,7 +53,11 @@ class PlainTextFieldView: UIView, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        row?.focusChange(.focusNext)
+        if row?.nextFocusableRow != nil {
+            row?.focusChange(.focusNext)
+        } else {
+            row?.focusChange(.blur)
+        }
         
         return true
         
@@ -110,12 +114,16 @@ class PlainTextFieldView: UIView, UITextFieldDelegate {
             action: #selector(keyboardToolbarNextTapped)
         )
         
+        nextButton.isEnabled = self.row?.nextFocusableRow != nil
+        
         let previousButton = UIBarButtonItem(
             title: "Previous",
             style: .plain,
             target: self,
             action: #selector(keyboardToolbarPreviousTapped)
         )
+        
+        previousButton.isEnabled = self.row?.previousFocusableRow != nil
         
         toolbar.setItems([
                 previousButton,
