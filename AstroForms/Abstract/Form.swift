@@ -69,6 +69,8 @@ open class Form: UIView {
         
     }
     
+    open func submit() {}
+    
     // MARK: Row change callbacks
     
     open func rowDidStartEditing(row: AnyRow) {}
