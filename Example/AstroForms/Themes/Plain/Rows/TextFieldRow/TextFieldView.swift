@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class PlainTextFieldView: UIView, UITextFieldDelegate {
+class TextFieldView: UIView, UITextFieldDelegate {
     
     @IBOutlet var textField: UITextField!
     
     @IBOutlet var label: UILabel!
     
-    weak var row: PlainTextFieldRow?
+    weak var row: TextFieldRow?
     
     override func awakeFromNib() {
         
@@ -28,7 +28,7 @@ class PlainTextFieldView: UIView, UITextFieldDelegate {
             action: #selector(textFieldDidChange),
             for: .editingChanged
         )
-        
+
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

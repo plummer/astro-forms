@@ -15,12 +15,19 @@ public protocol FocusableRow {
     /// Use this to have a custom focus rect when row is being edited.
     var focusRect: CGRect { get }
 
+    /// The UIResponder element to focus when the Next / Previous keyboard
+    /// buttons are tapped, or the row is otherwise given focus.
     var focusElement: UIResponder { get }
     
+    /// The next row in the form, if it exists.
     var nextFocusableRow: FocusableRow? { get }
     
+    /// The previous row in the form, if it exists.
     var previousFocusableRow: FocusableRow? { get }
     
+    /// Change the focus state of this row.
+    ///
+    /// - Parameter change: The type of focus update.
     func focusChange(_ change: FocusChange)
     
 }

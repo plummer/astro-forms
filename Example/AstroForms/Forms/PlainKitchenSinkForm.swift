@@ -20,11 +20,11 @@ class PlainKitchenSinkForm: Form {
         
         do {
             
-            let textField = try PlainTextFieldRow(
+            let textField = try TextFieldRow(
                 tag: KitchenSinkTag.helloWorld,
-                title: "Hello world",
+                title: "Email",
                 value: nil,
-                placeholder: "Respond?",
+                placeholder: "email@astroforms.com",
                 keyboardType: .emailAddress,
                 isSecureTextEntry: false,
                 clearButtonMode: .whileEditing
@@ -45,7 +45,7 @@ class PlainKitchenSinkForm: Form {
         switch tag {
         case .helloWorld:
             
-            guard let helloWorldRow = row as? PlainTextFieldRow else {
+            guard let helloWorldRow = row as? TextFieldRow else {
                 return
             }
             

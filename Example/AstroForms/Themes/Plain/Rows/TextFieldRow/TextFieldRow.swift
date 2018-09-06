@@ -11,13 +11,13 @@ import UIKit
 import AstroForms
 
 /// A basic text field and label row.
-class PlainTextFieldRow: Row, ValueRow, FocusableRow {
+class TextFieldRow: Row, ValueRow, FocusableRow {
     
     typealias Value = String?
     
     var tag: RowTag
     
-    var view: PlainTextFieldView
+    var view: TextFieldView
     
     var focusElement: UIResponder { return view.textField }
     
@@ -89,12 +89,13 @@ class PlainTextFieldRow: Row, ValueRow, FocusableRow {
         self.keyboardType = keyboardType
         self.isSecureTextEntry = isSecureTextEntry
         self.clearButtonMode = clearButtonMode
+        self.view.textField.accessibilityLabel = self.view.label.text ?? ""
 
     }
     
     init(tag: RowTag) throws {
         
-        let view: PlainTextFieldView = try PlainTextFieldView.fromXib()
+        let view: TextFieldView = try TextFieldView.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self

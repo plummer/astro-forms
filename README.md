@@ -13,14 +13,15 @@ Astro Forms is not yet ready to be used in any context, the first beta will be r
 #### Base implementation
 
 - [x] Stackview / form rendering
-- [ ] Form submission
+- [x] Form submission
 - [ ] Validation
 - [ ] Accessibility
 - [ ] Documentation
+- [ ] Localization
 
 #### Included Row Examples
 
-- [ ] Textfield
+- [x] Textfield
 - [ ] Textview
 - [ ] Checkbox / switch
 - [ ] Multi checkbox
