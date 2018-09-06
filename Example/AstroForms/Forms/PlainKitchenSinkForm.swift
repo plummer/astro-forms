@@ -53,9 +53,7 @@ class PlainKitchenSinkForm: Form {
             
             print("str:", str)
             
-            
         }
-        
         
     }
     

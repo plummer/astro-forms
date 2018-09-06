@@ -48,7 +48,16 @@ public extension AnyRow where Self: FocusableRow {
         
     }
     
-    private func getNextFocusableRow(
+    /// Get the row before or after a given row.
+    ///
+    /// - Parameters:
+    ///   - currentRow: The row to check before / after for.
+    ///   - reversedDirection: Check in the reverse direction
+    /// - Returns: The row before / after the given row
+    ///
+    /// Use the computed variables `nextFocusableRow` and `previousFocusableRow`
+    /// instead of this function.
+    private func nextFocusableRow(
         currentRow: AnyRow,
         reversedDirection: Bool = false
     ) -> FocusableRow? {
@@ -87,11 +96,11 @@ public extension AnyRow where Self: FocusableRow {
     }
     
     var previousFocusableRow: FocusableRow? {
-        return getNextFocusableRow(currentRow: self, reversedDirection: true)
+        return nextFocusableRow(currentRow: self, reversedDirection: true)
     }
     
     var nextFocusableRow: FocusableRow? {
-        return getNextFocusableRow(currentRow: self, reversedDirection: false)
+        return nextFocusableRow(currentRow: self, reversedDirection: false)
     }
     
 }
