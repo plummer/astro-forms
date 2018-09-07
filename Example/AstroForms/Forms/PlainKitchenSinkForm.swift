@@ -36,8 +36,6 @@ class PlainKitchenSinkForm: Form {
                 self.append(dummy)
             }
             
-            
-            
             let textField = try TextFieldRow(
                 tag: KitchenSinkTag.email,
                 title: "Email",
@@ -70,6 +68,7 @@ class PlainKitchenSinkForm: Form {
             self.append(textField)
             self.append(passwordField)
             
+            
         } catch let error {
             debugPrint("Error:", error)
         }
@@ -77,7 +76,7 @@ class PlainKitchenSinkForm: Form {
     }
     
     override func rowDidEndEditing(row: AnyRow) {
-        
+
         guard let tag = row.tag as? KitchenSinkTag else { return }
         
         switch tag {

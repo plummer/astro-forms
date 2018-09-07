@@ -19,7 +19,7 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
     
     var tag: RowTag
     
-    var view: TextFieldView
+    var view: TextFieldRowView
     
     var focusElement: UIResponder { return view.textField }
     
@@ -97,7 +97,7 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
     
     init(tag: RowTag) throws {
         
-        let view: TextFieldView = try TextFieldView.fromXib()
+        let view: TextFieldRowView = try TextFieldRowView.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self

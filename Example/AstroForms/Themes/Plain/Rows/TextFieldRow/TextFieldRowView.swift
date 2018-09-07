@@ -1,5 +1,5 @@
 //
-//  TextFieldView.swift
+//  TextFieldRowView.swift
 //  Astro
 //
 //  Created by Andrew Plummer on 1/7/18.
@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+import AstroForms
 
-class TextFieldView: UIView, UITextFieldDelegate {
+class TextFieldRowView: UIView,
+    UITextFieldDelegate,
+    DefaultKeyboardToolbarDelegate {
     
     @IBOutlet var textField: UITextField!
     
@@ -33,7 +36,9 @@ class TextFieldView: UIView, UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
-        textField.inputAccessoryView = defaultToolbar
+        // This will need updating in the event that the form shows / hides
+        // a row before / after the TextFieldRow.
+        textField.inputAccessoryView = defaultToolbar(row: self.row)
         
         return true
     
@@ -85,56 +90,6 @@ class TextFieldView: UIView, UITextFieldDelegate {
     
         row?.focusChange(.focusPrevious)
     
-    }
-    
-    var defaultToolbar: UIToolbar {
-       
-        let toolbar = UIToolbar()
-        toolbar.barStyle = .default
-        toolbar.isTranslucent = true
-        toolbar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(
-            title: "Done",
-            style: .plain,
-            target: self,
-            action: #selector(keyboardToolbarDoneTapped)
-        )
-        
-        let flexibleSpace = UIBarButtonItem(
-            barButtonSystemItem: .flexibleSpace,
-            target: nil,
-            action: nil
-        )
-        
-        let nextButton = UIBarButtonItem(
-            title: "Next",
-            style: .plain,
-            target: self,
-            action: #selector(keyboardToolbarNextTapped)
-        )
-        
-        nextButton.isEnabled = self.row?.nextFocusableRow != nil
-        
-        let previousButton = UIBarButtonItem(
-            title: "Previous",
-            style: .plain,
-            target: self,
-            action: #selector(keyboardToolbarPreviousTapped)
-        )
-        
-        previousButton.isEnabled = self.row?.previousFocusableRow != nil
-        
-        toolbar.setItems([
-                previousButton,
-                nextButton,
-                flexibleSpace,
-                doneButton
-            ], animated: false
-        )
-        
-        return toolbar
-        
     }
     
 }
