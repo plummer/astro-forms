@@ -13,6 +13,7 @@ class PlainKitchenSinkForm: Form {
     
     enum KitchenSinkTag: RowTag {
         case
+        about,
         custom(String),
         email,
         password
@@ -22,6 +23,10 @@ class PlainKitchenSinkForm: Form {
         super.awakeFromNib()
         
         do {
+            
+            let textView = try TextViewRow(tag: KitchenSinkTag.about)
+            
+            self.append(textView)
             
             for i in 1...20 {
                 let dummy = try TextFieldRow(
@@ -80,6 +85,8 @@ class PlainKitchenSinkForm: Form {
         guard let tag = row.tag as? KitchenSinkTag else { return }
         
         switch tag {
+        case .about:
+            break
         case .custom(let str):
             break
         case .email:
