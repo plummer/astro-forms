@@ -13,6 +13,8 @@ import AstroForms
 /// A basic text field and label row.
 class TextFieldRow: Row, ValueRow, FocusableRow {
     
+    var focusRect: () -> CGRect? = { return nil }
+    
     typealias Value = String?
     
     var tag: RowTag

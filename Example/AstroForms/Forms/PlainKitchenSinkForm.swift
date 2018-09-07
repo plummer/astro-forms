@@ -12,7 +12,10 @@ import AstroForms
 class PlainKitchenSinkForm: Form {
     
     enum KitchenSinkTag: RowTag {
-        case helloWorld
+        case
+        custom(String),
+        email,
+        password
     }
     
     override func awakeFromNib() {
@@ -20,8 +23,23 @@ class PlainKitchenSinkForm: Form {
         
         do {
             
+            for i in 1...20 {
+                let dummy = try TextFieldRow(
+                    tag: KitchenSinkTag.custom("\(i)"),
+                    title: "Dummy-(\(i))",
+                    value: nil,
+                    placeholder: "dummy-\(i)@astroforms.com",
+                    keyboardType: .emailAddress,
+                    isSecureTextEntry: false,
+                    clearButtonMode: .whileEditing
+                )
+                self.append(dummy)
+            }
+            
+            
+            
             let textField = try TextFieldRow(
-                tag: KitchenSinkTag.helloWorld,
+                tag: KitchenSinkTag.email,
                 title: "Email",
                 value: nil,
                 placeholder: "email@astroforms.com",
@@ -30,7 +48,27 @@ class PlainKitchenSinkForm: Form {
                 clearButtonMode: .whileEditing
             )
             
+            let passwordField = try TextFieldRow(
+                tag: KitchenSinkTag.password,
+                title: "Password",
+                value: nil,
+                placeholder: "******",
+                keyboardType: .default,
+                isSecureTextEntry: true,
+                clearButtonMode: .always
+            )
+            
+            textField.focusRect = {
+                CGRect(
+                    x: textField.baseView.frame.origin.x,
+                    y: textField.baseView.frame.origin.y,
+                    width: textField.baseView.frame.width,
+                    height: textField.baseView.frame.height + passwordField.baseView.frame.height
+                )
+            }
+            
             self.append(textField)
+            self.append(passwordField)
             
         } catch let error {
             debugPrint("Error:", error)
@@ -43,7 +81,9 @@ class PlainKitchenSinkForm: Form {
         guard let tag = row.tag as? KitchenSinkTag else { return }
         
         switch tag {
-        case .helloWorld:
+        case .custom(let str):
+            break
+        case .email:
             
             guard let helloWorldRow = row as? TextFieldRow else {
                 return
@@ -52,6 +92,8 @@ class PlainKitchenSinkForm: Form {
             let str = helloWorldRow.value
             
             print("str:", str)
+        case .password:
+            break
             
         }
         

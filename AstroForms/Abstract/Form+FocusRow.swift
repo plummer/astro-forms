@@ -21,9 +21,10 @@ extension Form {
                 row.baseView.firstResponder != nil,
                 let focusableRow = row as? FocusableRow else { continue }
 
-            let focusRect = focusableRow.focusRect
+            let focusRect = focusableRow.focusRect() ?? row.baseView.frame
             
             var view: UIView? = row.baseView
+            
             var scrollView: UIScrollView?
             
             while scrollView == nil {

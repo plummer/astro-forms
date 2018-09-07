@@ -13,7 +13,10 @@ public protocol FocusableRow {
     /// An offset modifier for keyboard management.
     ///
     /// Use this to have a custom focus rect when row is being edited.
-    var focusRect: CGRect { get }
+    /// If you implement this as nil, the frame of the `baseView` will be
+    /// focused by default. Computes lazily so that it will be accessed
+    /// when the row is actually being focused.
+    var focusRect: () -> CGRect? { get set }
 
     /// The UIResponder element to focus when the Next / Previous keyboard
     /// buttons are tapped, or the row is otherwise given focus.
@@ -29,12 +32,6 @@ public protocol FocusableRow {
     ///
     /// - Parameter change: The type of focus update.
     func focusChange(_ change: FocusChange)
-    
-}
-
-public extension AnyRow where Self: FocusableRow {
-    
-    var focusRect: CGRect { return self.baseView.frame }
     
 }
 
