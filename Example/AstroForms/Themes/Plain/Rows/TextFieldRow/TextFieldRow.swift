@@ -19,14 +19,20 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
     
     var tag: RowTag
     
-    var view: TextFieldView
+    var view: TextFieldRowView
     
     var focusElement: UIResponder { return view.textField }
     
     /// The `UITextField` input value.
     var value: Value {
         
-        get { return view.textField.text }
+        get {
+            
+            return (view.textField.text ?? "").count > 0
+                ? view.textField.text
+                : nil
+            
+        }
         
         set { view.textField.text = newValue }
         
@@ -97,7 +103,7 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
     
     init(tag: RowTag) throws {
         
-        let view: TextFieldView = try TextFieldView.fromXib()
+        let view: TextFieldRowView = try TextFieldRowView.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self

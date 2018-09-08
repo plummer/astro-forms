@@ -1,0 +1,88 @@
+//
+//  TextViewRow.swift
+//  AstroForms_Example
+//
+//  Created by Andrew Plummer on 7/9/18.
+//  Copyright © 2018 CocoaPods. All rights reserved.
+//
+
+import Foundation
+import AstroForms
+
+class TextViewRow: Row, ValueRow, FocusableRow {
+
+    var focusRect: () -> CGRect? = { nil }
+    
+    typealias Value = String?
+    
+    var tag: RowTag
+    
+    var view: TextViewRowView
+    
+    var focusElement: UIResponder { return view.textView }
+    
+    var value: Value {
+        
+        get {
+            
+            // Normalise the behaviour of an empty view with `UITextField`
+            return view.textView.text.count > 0
+                ? view.textView.text
+                : nil
+            
+        }
+        
+        set { view.textView.text = newValue }
+        
+    }
+    
+    var title: String? {
+        
+        get { return view.label.text }
+        
+        set { view.label.text = newValue }
+        
+    }
+    
+    var keyboardType: UIKeyboardType {
+        
+        get { return view.textView.keyboardType }
+        
+        set { view.textView.keyboardType = newValue }
+        
+    }
+    
+    var isSecureTextEntry: Bool {
+        
+        get { return view.textView.isSecureTextEntry }
+        
+        set { view.textView.isSecureTextEntry = newValue }
+        
+    }
+    
+    var height: CGFloat {
+        
+        get { return view.textViewHeightConstraint.constant }
+        
+        set { view.textViewHeightConstraint.constant = newValue }
+        
+    }
+    
+    init(tag: RowTag) throws {
+        
+        let view: TextViewRowView = try TextViewRowView.fromXib()
+        self.view = view
+        self.tag = tag
+        self.view.row = self
+        self.view.textView.accessibilityLabel = self.view.label.text ?? ""
+        
+    }
+    
+    convenience init(tag: RowTag, height: CGFloat) throws {
+        
+        try self.init(tag: tag)
+        self.height = height
+        
+    }
+
+}
