@@ -26,7 +26,13 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
     /// The `UITextField` input value.
     var value: Value {
         
-        get { return view.textField.text }
+        get {
+            
+            return (view.textField.text ?? "").count > 0
+                ? view.textField.text
+                : nil
+            
+        }
         
         set { view.textField.text = newValue }
         

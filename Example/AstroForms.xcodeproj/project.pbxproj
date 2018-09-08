@@ -14,6 +14,9 @@
 		494E14132142716900D92CC5 /* TextViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E14122142716900D92CC5 /* TextViewRow.swift */; };
 		494E14152142717500D92CC5 /* TextViewRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E14142142717500D92CC5 /* TextViewRowView.swift */; };
 		494E1417214271C600D92CC5 /* TextViewRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494E1416214271C600D92CC5 /* TextViewRowView.xib */; };
+		494E142021433F8000D92CC5 /* SwitchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E141F21433F8000D92CC5 /* SwitchRow.swift */; };
+		494E142221433F8800D92CC5 /* SwitchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E142121433F8800D92CC5 /* SwitchRowView.swift */; };
+		494E142421433F9100D92CC5 /* SwitchRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494E142321433F9100D92CC5 /* SwitchRowView.xib */; };
 		5398AB6635E9B4987F81347D /* Pods_AstroForms_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42569D7CB07D2BBB4BE97051 /* Pods_AstroForms_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -44,6 +47,9 @@
 		494E14122142716900D92CC5 /* TextViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewRow.swift; sourceTree = "<group>"; };
 		494E14142142717500D92CC5 /* TextViewRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewRowView.swift; sourceTree = "<group>"; };
 		494E1416214271C600D92CC5 /* TextViewRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewRowView.xib; sourceTree = "<group>"; };
+		494E141F21433F8000D92CC5 /* SwitchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRow.swift; sourceTree = "<group>"; };
+		494E142121433F8800D92CC5 /* SwitchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRowView.swift; sourceTree = "<group>"; };
+		494E142321433F9100D92CC5 /* SwitchRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchRowView.xib; sourceTree = "<group>"; };
 		541EBB79313DD8E28C14FDE1 /* Pods-AstroForms_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroForms_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroForms_Tests/Pods-AstroForms_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AstroForms_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroForms_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 		494E13BB213F683600D92CC5 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
+				494E141E21433F7800D92CC5 /* SwitchRow */,
 				494E14112142716000D92CC5 /* TextViewRow */,
 				494E13BC213F684300D92CC5 /* TextFieldRow */,
 			);
@@ -142,6 +149,16 @@
 				494E1416214271C600D92CC5 /* TextViewRowView.xib */,
 			);
 			path = TextViewRow;
+			sourceTree = "<group>";
+		};
+		494E141E21433F7800D92CC5 /* SwitchRow */ = {
+			isa = PBXGroup;
+			children = (
+				494E141F21433F8000D92CC5 /* SwitchRow.swift */,
+				494E142121433F8800D92CC5 /* SwitchRowView.swift */,
+				494E142321433F9100D92CC5 /* SwitchRowView.xib */,
+			);
+			path = SwitchRow;
 			sourceTree = "<group>";
 		};
 		508CB67FC6A1509675A5829B /* Frameworks */ = {
@@ -327,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				494E142421433F9100D92CC5 /* SwitchRowView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				494E140F2140E14700D92CC5 /* TextFieldRowView.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -433,9 +451,11 @@
 				494E14102140E14700D92CC5 /* TextFieldRowView.swift in Sources */,
 				494E14132142716900D92CC5 /* TextViewRow.swift in Sources */,
 				494E13BA213F677600D92CC5 /* PlainKitchenSinkForm.swift in Sources */,
+				494E142021433F8000D92CC5 /* SwitchRow.swift in Sources */,
 				494E140E2140E14700D92CC5 /* TextFieldRow.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				494E14152142717500D92CC5 /* TextViewRowView.swift in Sources */,
+				494E142221433F8800D92CC5 /* SwitchRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

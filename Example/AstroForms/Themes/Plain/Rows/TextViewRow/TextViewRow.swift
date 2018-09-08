@@ -11,7 +11,7 @@ import AstroForms
 
 class TextViewRow: Row, ValueRow, FocusableRow {
 
-    var focusRect: () -> CGRect? = { return nil }
+    var focusRect: () -> CGRect? = { nil }
     
     typealias Value = String?
     
@@ -60,12 +60,28 @@ class TextViewRow: Row, ValueRow, FocusableRow {
         
     }
     
+    var height: CGFloat {
+        
+        get { return view.textViewHeightConstraint.constant }
+        
+        set { view.textViewHeightConstraint.constant = newValue }
+        
+    }
+    
     init(tag: RowTag) throws {
         
         let view: TextViewRowView = try TextViewRowView.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self
+        self.view.textView.accessibilityLabel = self.view.label.text ?? ""
+        
+    }
+    
+    convenience init(tag: RowTag, height: CGFloat) throws {
+        
+        try self.init(tag: tag)
+        self.height = height
         
     }
 

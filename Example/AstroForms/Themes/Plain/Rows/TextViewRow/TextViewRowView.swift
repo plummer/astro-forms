@@ -18,6 +18,8 @@ class TextViewRowView: UIView,
     
     @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
+    
     weak var row: TextViewRow?
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
@@ -52,6 +54,7 @@ class TextViewRowView: UIView,
         super.awakeFromNib()
         
         textView.delegate = self
+        
     
     }
     

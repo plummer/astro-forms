@@ -13,6 +13,7 @@ class PlainKitchenSinkForm: Form {
     
     enum KitchenSinkTag: RowTag {
         case
+        termsConditions,
         about,
         custom(String),
         email,
@@ -24,11 +25,18 @@ class PlainKitchenSinkForm: Form {
         
         do {
             
-            let textView = try TextViewRow(tag: KitchenSinkTag.about)
+            let textView = try TextViewRow(
+                tag: KitchenSinkTag.about,
+                height: 100
+            )
             
             self.append(textView)
             
-            for i in 1...20 {
+            let switchRow = try SwitchRow(tag: KitchenSinkTag.termsConditions)
+            
+            self.append(switchRow)
+            
+            for i in 1...5 {
                 let dummy = try TextFieldRow(
                     tag: KitchenSinkTag.custom("\(i)"),
                     title: "Dummy-(\(i))",
@@ -85,10 +93,6 @@ class PlainKitchenSinkForm: Form {
         guard let tag = row.tag as? KitchenSinkTag else { return }
         
         switch tag {
-        case .about:
-            break
-        case .custom(let str):
-            break
         case .email:
             
             guard let helloWorldRow = row as? TextFieldRow else {
@@ -98,9 +102,7 @@ class PlainKitchenSinkForm: Form {
             let str = helloWorldRow.value
             
             print("str:", str)
-        case .password:
-            break
-            
+        default: break
         }
         
     }
