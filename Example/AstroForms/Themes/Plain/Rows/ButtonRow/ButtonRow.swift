@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import AstroForms
+
+class ButtonRow: Row {
+    
+    var view: ButtonRowView
+    
+    typealias View = ButtonRowView
+    
+    var tag: RowTag
+    
+    init(tag: RowTag) throws {
+        
+        let view: ButtonRowView = try ButtonRowView.fromXib()
+        self.view = view
+        self.tag = tag
+        
+    }
+    
+}

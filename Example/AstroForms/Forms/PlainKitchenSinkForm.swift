@@ -17,13 +17,20 @@ class PlainKitchenSinkForm: Form {
         about,
         custom(String),
         email,
-        password
+        password,
+        submit
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         do {
+            
+            let buttonRowView = try ButtonRow(
+                tag: KitchenSinkTag.submit
+            )
+            
+            self.append(buttonRowView)
             
             let textView = try TextViewRow(
                 tag: KitchenSinkTag.about,
