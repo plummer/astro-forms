@@ -1,6 +1,6 @@
 # Astro Forms
 
-[![Bitrise App Page](https://app.bitrise.io/app/11b5791a9dab5b3c/status.svg?token=jFpCmx9nwy200940OcGbqA&branch=master)](https://app.bitrise.io/app/11b5791a9dab5b3c) [![Astro Forms Documentation](https://github.com/plummer/astro-docs/blob/master/assets/docs-button.png)](https://www.astroforms.com)
+[![Bitrise App Page](https://app.bitrise.io/app/11b5791a9dab5b3c/status.svg?token=jFpCmx9nwy200940OcGbqA&branch=master)](https://app.bitrise.io/app/11b5791a9dab5b3c)
 
 An approachable iOS forms framework for building beautiful, reusable and easy to maintain forms.
 
@@ -22,8 +22,8 @@ Astro Forms is not yet ready to be used in any context, the first beta will be r
 #### Included Row Examples
 
 - [x] Textfield
-- [ ] Textview
-- [ ] Checkbox / switch
+- [x] Textview
+- [x] Checkbox / switch
 - [ ] Multi checkbox
 - [ ] Multi Select Row
 - [ ] Radio
