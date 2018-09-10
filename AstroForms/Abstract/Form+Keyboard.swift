@@ -77,6 +77,7 @@ extension Form {
     /// This is a hack and I can ideally remove it.
     func scrollToFocusedRow() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
+            [unowned self] in
             self.focusRow()
         }
     }

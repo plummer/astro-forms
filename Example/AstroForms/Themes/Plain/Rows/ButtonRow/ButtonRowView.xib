@@ -22,6 +22,9 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="voY-mL-ZTB"/>
                     </constraints>
                     <state key="normal" title="Submit"/>
+                    <connections>
+                        <action selector="buttonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ySg-or-92o"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -32,6 +35,9 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pf1-PH-wOG" secondAttribute="bottom" constant="20" id="z78-us-4Ua"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="button" destination="pf1-PH-wOG" id="xpP-9L-BgD"/>
+            </connections>
         </view>
     </objects>
 </document>

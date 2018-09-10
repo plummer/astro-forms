@@ -11,4 +11,12 @@ import UIKit
 
 class ButtonRowView: UIView {
     
+    weak var row: ButtonRow?
+    
+    @IBOutlet weak var button: UIButton!
+    
+    @IBAction func buttonTapped(_ sender: Any) {
+        row?.buttonTapped()
+    }
+    
 }

@@ -51,11 +51,11 @@ class TextViewRowView: UIView,
     }
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         
         textView.delegate = self
         
-    
     }
     
 }
