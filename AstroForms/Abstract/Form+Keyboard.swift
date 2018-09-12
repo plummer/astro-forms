@@ -73,13 +73,8 @@ extension Form {
     
     /// Ensure the focus update occurs after the default scrollView position
     /// change.
-    ///
-    /// This is a hack and I can ideally remove it.
     func scrollToFocusedRow() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
-            [unowned self] in
-            self.focusRow()
-        }
+        self.focusRow()
     }
     
     @objc func didBeginEditingTextField(_ notification: Notification) {

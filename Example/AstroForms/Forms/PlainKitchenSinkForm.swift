@@ -28,7 +28,7 @@ class PlainKitchenSinkForm: Form {
             
             let buttonRowView = try ButtonRow(
             tag: KitchenSinkTag.submit,
-            title: "Submit") {[unowned self] in
+            title: "Submit") {
                 
                 debugPrint("button tapped")
                 
