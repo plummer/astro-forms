@@ -15,7 +15,7 @@ Astro Forms is not yet ready to be used in any context, the first beta will be r
 - [x] Stackview / form rendering
 - [x] Form submission
 - [ ] Validation
-- [ ] Accessibility
+- [ ] Accessibility ([WCAG 2.0 AA](https://www.w3.org/TR/mobile-accessibility-mapping))
 - [ ] Documentation
 - [ ] Localization
 
