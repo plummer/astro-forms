@@ -35,6 +35,7 @@ class CheckListItemView: UIView {
         let view: CheckListItemView = try CheckListItemView.fromXib()
         
         view.label.text = label
+        view.switch.accessibilityLabel = view.label.text
         view.`switch`.setOn(value, animated: false)
         
         return view
