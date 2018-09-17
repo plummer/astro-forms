@@ -26,14 +26,22 @@ class PlainKitchenSinkForm: Form {
         
         do {
             
-            let checkListRow = try CheckListRow(
-                tag: KitchenSinkTag.about,
-                items:
-                CheckListItemView.initFromNibWithValue(label: "hello", value: false),
-                CheckListItemView.initFromNibWithValue(label: "world", value: true)
+            let checkList = try CheckListRow(
+                tag: KitchenSinkTag.termsConditions,
+                items: (1...2).map({ int -> SwitchRow in
+                    
+                    return try SwitchRow(
+                        tag: KitchenSinkTag.custom("switch-\(int)"),
+                        title: "switch-\(int)",
+                        value: int == 1
+                    )
+                    
+                })
             )
             
-            self.append(checkListRow)
+            self.append(checkList)
+            
+            //self.append(checkListRow)
             
             let buttonRowView = try ButtonRow(
             tag: KitchenSinkTag.submit,

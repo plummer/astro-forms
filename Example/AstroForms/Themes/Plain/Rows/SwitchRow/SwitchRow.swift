@@ -36,11 +36,19 @@ class SwitchRow: Row, ValueRow {
     
     init(tag: RowTag) throws {
         
-        let view: SwitchRowView = try SwitchRowView.fromXib()
+        let view: View = try View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self
         self.view.switch.accessibilityLabel = self.view.label.text
+        
+    }
+    
+    convenience init(tag: RowTag, title: String, value: Bool) throws {
+        
+        try self.init(tag: tag)
+        self.title = title
+        self.value = value
         
     }
     

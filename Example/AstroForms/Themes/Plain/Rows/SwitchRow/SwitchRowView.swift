@@ -18,4 +18,19 @@ class SwitchRowView: UIView {
     
     weak var row: SwitchRow?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        `switch`.addTarget(
+            self,
+            action: #selector(switchValueChanged(_:)),
+            for: .valueChanged
+        )
+        
+    }
+    
+    @objc func switchValueChanged(_ sender: UISwitch) {
+        row?.valueDidEndEditing()
+    }
+    
 }

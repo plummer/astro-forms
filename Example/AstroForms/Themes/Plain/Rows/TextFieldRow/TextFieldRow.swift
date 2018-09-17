@@ -103,7 +103,7 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
     
     init(tag: RowTag) throws {
         
-        let view: TextFieldRowView = try TextFieldRowView.fromXib()
+        let view: View = try View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self

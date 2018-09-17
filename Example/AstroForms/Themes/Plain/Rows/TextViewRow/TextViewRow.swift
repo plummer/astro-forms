@@ -70,7 +70,7 @@ class TextViewRow: Row, ValueRow, FocusableRow {
     
     init(tag: RowTag) throws {
         
-        let view: TextViewRowView = try TextViewRowView.fromXib()
+        let view: View = try View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self

@@ -34,7 +34,7 @@ class ButtonRow: Row {
     
     init(tag: RowTag) throws {
         
-        let view: ButtonRowView = try ButtonRowView.fromXib()
+        let view: View = try View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self

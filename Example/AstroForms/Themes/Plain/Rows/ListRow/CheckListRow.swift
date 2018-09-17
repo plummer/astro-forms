@@ -9,7 +9,9 @@
 import Foundation
 import AstroForms
 
-class CheckListRow: Row {
+class CheckListRow: Row, ValueRow {
+    
+    typealias Value = [SwitchRow]
     
     typealias View = CheckListRowView
     
@@ -17,24 +19,40 @@ class CheckListRow: Row {
     
     var view: View
     
+    var value: Value {
+        
+        get {
+            return rows
+        }
+        
+        set {
+            view.stackView.subviews.forEach { $0.removeFromSuperview() }
+            newValue.forEach { addItem(item: $0) }
+        }
+        
+    }
+    
+    var rows: [SwitchRow] = []
+    
     func didCheck(newValue: Bool, view: UIView) {
         print("did check \(newValue), \(view)")
     }
     
-    func addItem(item: CheckListItemView) {
-        item.delegate = self
-        view.stackView.addArrangedSubview(item)
+    func addItem(item: SwitchRow) {
+        //item.delegate = self
+        rows.append(item)
+        view.stackView.addArrangedSubview(item.view)
     }
     
     init(tag: RowTag) throws {
         
         self.tag = tag
-        let view: View = try CheckListRowView.fromXib()
+        let view: View = try View.fromXib()
         self.view = view
         
     }
     
-    convenience init(tag: RowTag, items: CheckListItemView...) throws {
+    convenience init(tag: RowTag, items: [SwitchRow]) throws {
         
         try self.init(tag: tag)
         items.forEach { addItem(item: $0) }
