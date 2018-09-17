@@ -116,7 +116,7 @@ class PlainKitchenSinkForm: Form {
         
     }
     
-    override func rowDidEndEditing(row: AnyRow) {
+    func rowDidEndEditing(row: AnyRow) {
 
         guard let tag = row.tag as? KitchenSinkTag else { return }
         

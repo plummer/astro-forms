@@ -10,7 +10,7 @@ import UIKit
 
 typealias VoidCallback = () -> Void
 
-open class Form: UIView {
+open class Form: UIView, RowDelegate {
     
     let scrollView = UIScrollView()
     
@@ -70,17 +70,5 @@ open class Form: UIView {
     }
     
     open func submit() {}
-    
-    // MARK: Row change callbacks
-    
-    open func rowDidStartEditing(row: AnyRow) {}
-    
-    open func rowDidEndEditing(row: AnyRow) {}
-    
-    open func rowDidEdit(row: AnyRow) {}
-    
-    open func rowDidFocus(row: AnyRow) {}
-    
-    open func rowDidBlur(row: AnyRow) {}
     
 }
