@@ -20,6 +20,11 @@
 		494E1427214536F700D92CC5 /* ButtonRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494E1426214536F700D92CC5 /* ButtonRowView.xib */; };
 		494E14292145370B00D92CC5 /* ButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E14282145370B00D92CC5 /* ButtonRow.swift */; };
 		494E142B2145371400D92CC5 /* ButtonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E142A2145371400D92CC5 /* ButtonRowView.swift */; };
+		49D6BF482148B9B8000E422D /* CheckListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6BF472148B9B8000E422D /* CheckListRow.swift */; };
+		49D6BF4C2148B9CB000E422D /* CheckListRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D6BF4B2148B9CB000E422D /* CheckListRowView.xib */; };
+		49D6BF4E2148BA46000E422D /* CheckListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6BF4D2148BA46000E422D /* CheckListRowView.swift */; };
+		49EEB138214F342E000F7BC7 /* CheckListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EEB137214F342E000F7BC7 /* CheckListItemView.swift */; };
+		49EEB13A214F3438000F7BC7 /* CheckListItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EEB139214F3438000F7BC7 /* CheckListItemView.xib */; };
 		5398AB6635E9B4987F81347D /* Pods_AstroForms_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42569D7CB07D2BBB4BE97051 /* Pods_AstroForms_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -56,6 +61,11 @@
 		494E1426214536F700D92CC5 /* ButtonRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonRowView.xib; sourceTree = "<group>"; };
 		494E14282145370B00D92CC5 /* ButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRow.swift; sourceTree = "<group>"; };
 		494E142A2145371400D92CC5 /* ButtonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRowView.swift; sourceTree = "<group>"; };
+		49D6BF472148B9B8000E422D /* CheckListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListRow.swift; sourceTree = "<group>"; };
+		49D6BF4B2148B9CB000E422D /* CheckListRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListRowView.xib; sourceTree = "<group>"; };
+		49D6BF4D2148BA46000E422D /* CheckListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListRowView.swift; sourceTree = "<group>"; };
+		49EEB137214F342E000F7BC7 /* CheckListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItemView.swift; sourceTree = "<group>"; };
+		49EEB139214F3438000F7BC7 /* CheckListItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListItemView.xib; sourceTree = "<group>"; };
 		541EBB79313DD8E28C14FDE1 /* Pods-AstroForms_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroForms_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroForms_Tests/Pods-AstroForms_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AstroForms_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroForms_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +140,7 @@
 		494E13BB213F683600D92CC5 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
+				49D6BF4621489BF1000E422D /* ListRow */,
 				494E1425214536EE00D92CC5 /* ButtonRow */,
 				494E141E21433F7800D92CC5 /* SwitchRow */,
 				494E14112142716000D92CC5 /* TextViewRow */,
@@ -176,6 +187,26 @@
 				494E142A2145371400D92CC5 /* ButtonRowView.swift */,
 			);
 			path = ButtonRow;
+			sourceTree = "<group>";
+		};
+		49D6BF4621489BF1000E422D /* ListRow */ = {
+			isa = PBXGroup;
+			children = (
+				49EEB136214F3421000F7BC7 /* Subviews */,
+				49D6BF472148B9B8000E422D /* CheckListRow.swift */,
+				49D6BF4D2148BA46000E422D /* CheckListRowView.swift */,
+				49D6BF4B2148B9CB000E422D /* CheckListRowView.xib */,
+			);
+			path = ListRow;
+			sourceTree = "<group>";
+		};
+		49EEB136214F3421000F7BC7 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				49EEB137214F342E000F7BC7 /* CheckListItemView.swift */,
+				49EEB139214F3438000F7BC7 /* CheckListItemView.xib */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		508CB67FC6A1509675A5829B /* Frameworks */ = {
@@ -367,6 +398,8 @@
 				494E140F2140E14700D92CC5 /* TextFieldRowView.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				494E1417214271C600D92CC5 /* TextViewRowView.xib in Resources */,
+				49D6BF4C2148B9CB000E422D /* CheckListRowView.xib in Resources */,
+				49EEB13A214F3438000F7BC7 /* CheckListItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,8 +504,11 @@
 				494E13BA213F677600D92CC5 /* PlainKitchenSinkForm.swift in Sources */,
 				494E14292145370B00D92CC5 /* ButtonRow.swift in Sources */,
 				494E142021433F8000D92CC5 /* SwitchRow.swift in Sources */,
+				49D6BF4E2148BA46000E422D /* CheckListRowView.swift in Sources */,
 				494E140E2140E14700D92CC5 /* TextFieldRow.swift in Sources */,
+				49EEB138214F342E000F7BC7 /* CheckListItemView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				49D6BF482148B9B8000E422D /* CheckListRow.swift in Sources */,
 				494E14152142717500D92CC5 /* TextViewRowView.swift in Sources */,
 				494E142B2145371400D92CC5 /* ButtonRowView.swift in Sources */,
 				494E142221433F8800D92CC5 /* SwitchRowView.swift in Sources */,

@@ -8,7 +8,7 @@ An approachable iOS forms framework for building beautiful, reusable and easy to
 
 Astro Forms is not yet ready to be used in any context, the first beta will be ready ~ November 2018.
 
-### 0.0.1
+### 0.1.0
 
 #### Base implementation
 

@@ -26,6 +26,15 @@ class PlainKitchenSinkForm: Form {
         
         do {
             
+            let checkListRow = try CheckListRow(
+                tag: KitchenSinkTag.about,
+                items:
+                CheckListItemView.initFromNibWithValue(label: "hello", value: false),
+                CheckListItemView.initFromNibWithValue(label: "world", value: true)
+            )
+            
+            self.append(checkListRow)
+            
             let buttonRowView = try ButtonRow(
             tag: KitchenSinkTag.submit,
             title: "Submit") {
