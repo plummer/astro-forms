@@ -12,46 +12,56 @@ extension Form {
     
     /// Scroll to a focused row's preferred focus rect if there is an active
     /// first responder inside it.
-    func focusRow() {
+    func focusRow(duration: Double, options: UIView.AnimationOptions) {
         
-        guard
-            let focusableRow = rows.filter({ row -> Bool in
-                return
-                    row.baseView.firstResponder != nil
-                    && (row as? FocusableRow) != nil
-        }).first as? FocusableRow,
-            let row = focusableRow as? AnyRow else {
-                return
-        }
-        
-        // TODO: Convert to the window coordinate space
-        let focusRect = focusableRow.focusRect() ?? row.baseView.frame
-        
-        var view: UIView? = row.baseView
-        
-        var scrollView: UIScrollView?
-        
-        while scrollView == nil {
+        for row in rows {
             
-            guard let _superview = view?.superview else { break }
-            scrollView = _superview as? UIScrollView
-            view = _superview
+            // Check if this is the currently selected row
+            guard
+                row.baseView.firstResponder != nil,
+                let focusableRow = row as? FocusableRow else { continue }
+
+            let focusRect = focusableRow.focusRect() ?? row.baseView.frame
+            
+            var view: UIView? = row.baseView
+            
+            var scrollView: UIScrollView?
+            
+            while scrollView == nil {
+                
+                guard let _superview = view?.superview else { break }
+                scrollView = _superview as? UIScrollView
+                view = _superview
+                
+            }
+            
+            guard
+                let _scrollView = scrollView,
+                let _directSuperview = row.baseView.superview else { continue }
+            
+            let rectInScrollView = _directSuperview.convert(
+                focusRect,
+                to: _scrollView
+            )
+            
+            UIView.animate(
+                withDuration: duration,
+                delay: 0,
+                options: options,
+                animations: {
+                // The animated property can't be used here, so this is
+                // wrapping in a standard UIView animation. If you use the
+                // animation property, it will conflict with the built in
+                // `UITextField` focus behaviour of UIKit, and will only
+                // work sometimes. Incidentally this provides more control over
+                // the focus timing / curve.
+                _scrollView.scrollRectToVisible(
+                    rectInScrollView,
+                    animated: false
+                )
+            }, completion: nil)
             
         }
-        
-        guard
-            let _scrollView = scrollView,
-            let _directSuperview = row.baseView.superview else { return }
-        
-        let rectInScrollView = _directSuperview.convert(
-            focusRect,
-            to: _scrollView
-        )
-        
-        _scrollView.scrollRectToVisible(
-            rectInScrollView,
-            animated: true
-        )
         
     }
     

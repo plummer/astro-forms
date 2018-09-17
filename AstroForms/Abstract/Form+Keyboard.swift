@@ -12,18 +12,20 @@ import UIKit
 extension Form {
     
     /// A block that takes the new ideal scrollView offset.
-    typealias KeyboardSizeChangeBlock = (CGFloat) -> Void
+    typealias KeyboardSizeChangeBlock = (
+        CGFloat,
+        Double,
+        UIView.AnimationOptions
+    ) -> Void
     
     /// A general handler for keyboard hiding / showing.
     ///
     /// - Parameters:
     ///   - notification: The keyboard notification
     ///   - animationBlock: The block to run as the keyboard changes size
-    ///   - completionBlock: A completion block for after the animation
     private func keyboardSizeChangeHandler(
         notification: Notification,
-        animationBlock: @escaping KeyboardSizeChangeBlock,
-        completionBlock: (() -> Void)? = nil
+        animationBlock: @escaping KeyboardSizeChangeBlock
     ) {
         
         guard
@@ -61,40 +63,33 @@ extension Form {
                 + frame.size.height
                 - kbFrame.origin.y
         
-        UIView.animate(
-            withDuration: duration,
-            delay: 0,
-            options: curve,
-            animations:
-            { animationBlock(newBottomInset) }
-        )   { _ in completionBlock?() }
+        animationBlock(newBottomInset, duration, curve)
     
     }
     
-    /// Ensure the focus update occurs after the default scrollView position
-    /// change.
-    func scrollToFocusedRow() {
-        self.focusRow()
-    }
-    
-    @objc func didBeginEditingTextField(_ notification: Notification) {
-        scrollToFocusedRow()
-    }
+    @objc func didBeginEditingTextField(_ notification: Notification) { }
     
     @objc func keyboardWillShow(_ notification: Notification) {
         
         keyboardSizeChangeHandler(
             notification: notification,
-            // `unowned` is safe
-            animationBlock: {[unowned self] (newBottomInset) in
-                
+            animationBlock: {
+                [unowned self] (newBottomInset, duration, options) in
+
                 self.scrollView.contentInset.bottom = newBottomInset
                 self.scrollView.scrollIndicatorInsets.bottom = newBottomInset
+                
                 // Handle additional complex keyboard management here.
                 // For example, showing multiple fields, and offset from the
                 // field to the keyboard.
-                self.scrollToFocusedRow()
-                
+                DispatchQueue.main.async {[unowned self] in
+                    // By default, animate rows with the same animation
+                    // duration and options as the keyboard show / hide.
+                    // This creates a smooth animation in this context,
+                    // and seems fine for others.
+                    self.focusRow(duration: duration, options: options)
+                }
+
         })
         
     }
@@ -103,8 +98,8 @@ extension Form {
         
         keyboardSizeChangeHandler(
             notification: notification,
-            // `unowned` is safe
-            animationBlock: {[unowned self] (newBottomInset) in
+            animationBlock: {
+                [unowned self] (newBottomInset, duration, options) in
                 
                 self.scrollView.contentInset.bottom = newBottomInset
                 self.scrollView.scrollIndicatorInsets.bottom = newBottomInset
