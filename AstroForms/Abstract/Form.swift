@@ -37,19 +37,13 @@ open class Form: UIView, RowDelegate {
         tag: TagType
         ) -> RowType? {
         
-        let row = self.filter { row -> Bool in
-            
-            // Confirm a tag match
-            guard
-                let _tag = row.tag as? TagType,
-                _tag == tag
-                else { return false }
-            
-            return true
-            
-            }.first as? RowType
+        for row in self.rows {
+            if (row.tag as? TagType) == tag {
+                return row as? RowType
+            }
+        }
         
-        return row
+        return nil
         
     }
     
@@ -70,5 +64,18 @@ open class Form: UIView, RowDelegate {
     }
     
     open func submit() {}
+    
+    // Subclasses cannot override protocol extension of superclasses
+    
+    open func rowDidStartEditing(row: AnyRow) {}
+    
+    open func rowDidEndEditing(row: AnyRow) {}
+    
+    open func rowDidEdit(row: AnyRow) {}
+    
+    open func rowDidFocus(row: AnyRow) {}
+    
+    open func rowDidBlur(row: AnyRow) {}
+
     
 }

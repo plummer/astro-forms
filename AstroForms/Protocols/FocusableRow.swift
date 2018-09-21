@@ -71,14 +71,14 @@ public extension AnyRow where Self: FocusableRow {
         var passedCurrentRow = false
         
         for index in stride(
-            from: reversedDirection ? _form.endIndex - 1 : _form.startIndex,
-            to: reversedDirection ? _form.startIndex - 1 : _form.endIndex,
+            from: reversedDirection ? _form.rows.endIndex - 1 : _form.rows.startIndex,
+            to: reversedDirection ? _form.rows.startIndex - 1 : _form.rows.endIndex,
             by: reversedDirection ? -1 : 1
             ) {
                 
                 // If the baseView refers to the same instance then
                 // this is the same row.
-                if _form[index].baseView === self.baseView {
+                if _form.rows[index].baseView === self.baseView {
                     passedCurrentRow = true
                     continue
                 }
@@ -87,7 +87,7 @@ public extension AnyRow where Self: FocusableRow {
                     continue
                 }
                 
-                guard let _focusableRow = _form[index] as? FocusableRow else {
+                guard let _focusableRow = _form.rows[index] as? FocusableRow else {
                     continue
                 }
                 
