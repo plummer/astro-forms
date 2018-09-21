@@ -17,7 +17,7 @@ public protocol ValidatableForm {
         row: R,
         _ rules: ValidationRuleMsgBlock<R>...) -> (Bool, String?)
     
-    func validate<R: ValueRow>(
+    func validateList<R: ValueRow>(
         row: R,
         _ rules: ValidationRuleMsgBlock<R>...) -> [(Bool, String?)]
     
@@ -61,19 +61,15 @@ public extension ValidatableForm {
         
     }
     
-    func validate<R: ValueRow>(
+    func validateList<R: ValueRow>(
         row: R,
         _ rules: ValidationRuleMsgBlock<R>...) -> [(Bool, String?)] {
         
-        var failedRules: [(Bool, String?)] = []
+        let rulesResults: [(Bool, String?)] = rules.map({
+            return ($0.0(row.value), $0.1)
+        })
         
-        for rule in rules {
-            if rule.0(row.value) == false {
-                failedRules.append((false, rule.1))
-            }
-        }
-        
-        return failedRules
+        return rulesResults
         
     }
     

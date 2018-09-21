@@ -47,7 +47,7 @@ open class Form: UIView, RowDelegate {
         
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         
         super.init(frame: frame)
         initialize()
