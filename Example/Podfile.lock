@@ -1,17 +1,8 @@
 PODS:
   - AstroForms (0.1.0)
-  - Nimble (7.2.0)
-  - Quick (1.3.1)
 
 DEPENDENCIES:
   - AstroForms (from `../`)
-  - Nimble
-  - Quick
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Nimble
-    - Quick
 
 EXTERNAL SOURCES:
   AstroForms:
@@ -19,9 +10,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AstroForms: d08952ef1757936efa3562cb700ec43a58eff8cd
-  Nimble: fa2913b0e14dafef970357f67d152ab4f7c4f457
-  Quick: d17304d58d0d169dd0bd1c6e5c28e3318de32a1a
 
-PODFILE CHECKSUM: 2c8cae75dcc46c1cec1f96c22b7cabcadbbdf79c
+PODFILE CHECKSUM: eeddd3da33b26a284ca0d4b1802457e77b47abae
 
 COCOAPODS: 1.6.0.beta.1

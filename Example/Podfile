@@ -6,8 +6,5 @@ target 'AstroForms_Example' do
 
   target 'AstroForms_Tests' do
     inherit! :search_paths
-
-    pod 'Quick'
-    pod 'Nimble'
   end
 end
