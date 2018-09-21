@@ -94,14 +94,14 @@ class PlainKitchenSinkForm: Form, ValidatableForm {
                 return
             }
             
-            let isValidNoMsg = validate(
+            let isValid = validate(
                 row: helloWorldRow,
                 { $0.count > 2 },
                 { $0.count < 5 },
                 { $0.contains("@") }
             )
             
-            print("example email validity", isValid, msg)
+            print("example email validity", isValid)
             
         default: break
         }
