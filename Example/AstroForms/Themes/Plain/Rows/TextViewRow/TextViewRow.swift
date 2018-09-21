@@ -10,10 +10,16 @@ import Foundation
 import AstroForms
 
 class TextViewRow: Row, ValueRow, FocusableRow {
+    
+    var valueHasStartedEditing: Bool = false
+    
+    var valueHasChanged: Bool = false
+    
+    var valueHasEndedEditing: Bool = false
 
     var focusRect: () -> CGRect? = { nil }
     
-    typealias Value = String?
+    typealias Value = String
     
     var tag: RowTag
     
@@ -26,9 +32,7 @@ class TextViewRow: Row, ValueRow, FocusableRow {
         get {
             
             // Normalise the behaviour of an empty view with `UITextField`
-            return view.textView.text.count > 0
-                ? view.textView.text
-                : nil
+            return view.textView.text
             
         }
         

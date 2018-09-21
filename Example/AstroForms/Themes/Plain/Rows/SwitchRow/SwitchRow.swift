@@ -12,6 +12,12 @@ import AstroForms
 
 class SwitchRow: Row, ValueRow {
     
+    var valueHasStartedEditing: Bool = false
+    
+    var valueHasChanged: Bool = false
+    
+    var valueHasEndedEditing: Bool = false
+    
     typealias Value = Bool
     
     var tag: RowTag

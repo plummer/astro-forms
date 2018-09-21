@@ -9,9 +9,9 @@
 import Foundation
 import AstroForms
 
-class PlainKitchenSinkForm: Form {
+class PlainKitchenSinkForm: Form, ValidatableForm {
     
-    enum KitchenSinkTag: RowTag {
+    enum KitchenSinkTag: RowTag, Equatable {
         case
         termsConditions,
         about,
@@ -25,57 +25,6 @@ class PlainKitchenSinkForm: Form {
         super.awakeFromNib()
         
         do {
-            
-            let checkList = try CheckListRow(
-                tag: KitchenSinkTag.termsConditions,
-                items: (1...2).map({ int -> SwitchRow in
-                    
-                    return try SwitchRow(
-                        tag: KitchenSinkTag.custom("switch-\(int)"),
-                        title: "switch-\(int)",
-                        value: int == 1
-                    )
-                    
-                })
-            )
-            
-            self.append(checkList)
-            
-            //self.append(checkListRow)
-            
-            let buttonRowView = try ButtonRow(
-            tag: KitchenSinkTag.submit,
-            title: "Submit") {
-                
-                debugPrint("button tapped")
-                
-            }
-            
-            self.append(buttonRowView)
-            
-            let textView = try TextViewRow(
-                tag: KitchenSinkTag.about,
-                height: 100
-            )
-            
-            self.append(textView)
-            
-            let switchRow = try SwitchRow(tag: KitchenSinkTag.termsConditions)
-            
-            self.append(switchRow)
-            
-            for i in 1...5 {
-                let dummy = try TextFieldRow(
-                    tag: KitchenSinkTag.custom("\(i)"),
-                    title: "Dummy-(\(i))",
-                    value: nil,
-                    placeholder: "dummy-\(i)@astroforms.com",
-                    keyboardType: .emailAddress,
-                    isSecureTextEntry: false,
-                    clearButtonMode: .whileEditing
-                )
-                self.append(dummy)
-            }
             
             let textField = try TextFieldRow(
                 tag: KitchenSinkTag.email,
@@ -106,8 +55,20 @@ class PlainKitchenSinkForm: Form {
                 )
             }
             
-            self.append(textField)
-            self.append(passwordField)
+            self.add(textField)
+            self.add(passwordField)
+            
+            let buttonRowView = try ButtonRow(
+                tag: KitchenSinkTag.submit,
+                title: "Submit") {
+                    
+                    debugPrint("button tapped")
+                    
+            }
+            
+            //let result = ValidationTest.email(32)
+            
+            self.add(buttonRowView)
             
             
         } catch let error {
@@ -116,7 +77,13 @@ class PlainKitchenSinkForm: Form {
         
     }
     
-    func rowDidEndEditing(row: AnyRow) {
+    override func rowDidEdit(row: AnyRow) {
+        
+        print("row", row)
+        
+    }
+    
+    override func rowDidEndEditing(row: AnyRow) {
 
         guard let tag = row.tag as? KitchenSinkTag else { return }
         
@@ -127,9 +94,15 @@ class PlainKitchenSinkForm: Form {
                 return
             }
             
-            let str = helloWorldRow.value
+            let isValidNoMsg = validate(
+                row: helloWorldRow,
+                { $0.count > 2 },
+                { $0.count < 5 },
+                { $0.contains("@") }
+            )
             
-            print("str:", str)
+            print("example email validity", isValid, msg)
+            
         default: break
         }
         

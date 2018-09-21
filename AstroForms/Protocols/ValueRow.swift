@@ -15,5 +15,5 @@ public protocol ValueRow: ValueViewDelegate {
     
     /// The value for the row.
     var value: Value { get set }
-        
+  
 }

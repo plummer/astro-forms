@@ -17,30 +17,29 @@ public protocol ValueViewDelegate: class {
     
     func valueDidEndEditing()
     
-}
-
-public extension ValueViewDelegate {
+    var valueHasChanged: Bool { get set }
     
-    func valueDidEdit() {}
+    var valueHasEndedEditing: Bool { get set }
     
-    func valueDidStartEditing() {}
-    
-    func valueDidEndEditing() {}
+    var valueHasStartedEditing: Bool { get set }
     
 }
 
 public extension ValueViewDelegate where Self: AnyRow {
-    
+
     func valueDidEdit() {
         form?.rowDidEdit(row: self)
+        self.valueHasChanged = true
     }
     
     func valueDidStartEditing() {
         form?.rowDidStartEditing(row: self)
+        self.valueHasStartedEditing = true
     }
     
     func valueDidEndEditing() {
         form?.rowDidEndEditing(row: self)
+        self.valueHasEndedEditing = true
     }
     
 }

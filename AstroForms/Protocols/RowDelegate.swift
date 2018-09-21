@@ -21,7 +21,7 @@ public protocol RowDelegate {
     
 }
 
-public extension RowDelegate where Self: Form {
+public extension RowDelegate where Self: AnyRow {
     
     func rowDidStartEditing(row: AnyRow) {}
     

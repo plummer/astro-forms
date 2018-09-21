@@ -11,6 +11,12 @@ import AstroForms
 
 class CheckListRow: Row, ValueRow {
     
+    var valueHasStartedEditing: Bool = false
+    
+    var valueHasChanged: Bool = false
+    
+    var valueHasEndedEditing: Bool = false
+    
     typealias Value = [SwitchRow]
     
     typealias View = CheckListRowView

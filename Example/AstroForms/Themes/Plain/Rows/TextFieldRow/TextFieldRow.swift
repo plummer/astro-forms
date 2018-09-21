@@ -13,9 +13,15 @@ import AstroForms
 /// A basic text field and label row.
 class TextFieldRow: Row, ValueRow, FocusableRow {
     
+    var valueHasStartedEditing: Bool = false
+    
+    var valueHasChanged: Bool = false
+    
+    var valueHasEndedEditing: Bool = false
+    
     var focusRect: () -> CGRect? = { return nil }
     
-    typealias Value = String?
+    typealias Value = String
     
     var tag: RowTag
     
@@ -28,9 +34,7 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
         
         get {
             
-            return (view.textField.text ?? "").count > 0
-                ? view.textField.text
-                : nil
+            return view.textField.text ?? ""
             
         }
         
@@ -41,7 +45,7 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
     /// The `UITextField` placeholder text.
     var placeholder: Value {
         
-        get { return view.textField.placeholder }
+        get { return view.textField.placeholder ?? "" }
         
         set { view.textField.placeholder = newValue }
         
@@ -92,8 +96,8 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
         
         try self.init(tag: tag)
         self.title = title
-        self.value = value
-        self.placeholder = placeholder
+        self.value = value ?? ""
+        self.placeholder = placeholder ?? ""
         self.keyboardType = keyboardType
         self.isSecureTextEntry = isSecureTextEntry
         self.clearButtonMode = clearButtonMode
