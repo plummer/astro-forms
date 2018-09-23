@@ -18,17 +18,6 @@ extension Form {
         wrapStackView.axis = .vertical
         wrapStackView.addArrangedSubview(view)
         
-//        let secondStack = UIStackView()
-//
-//        let errorView: ErrorView = try! ErrorView.fromXib()
-//
-//        secondStack.addArrangedSubview(errorView)
-//        wrapStackView.addArrangedSubview(secondStack)
-//
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-//            errorView.show(message: "hello", animated: true)
-//        }
-        
         return wrapStackView
         
     }

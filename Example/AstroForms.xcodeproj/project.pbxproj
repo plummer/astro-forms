@@ -20,9 +20,13 @@
 		494E1427214536F700D92CC5 /* ButtonRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494E1426214536F700D92CC5 /* ButtonRowView.xib */; };
 		494E14292145370B00D92CC5 /* ButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E14282145370B00D92CC5 /* ButtonRow.swift */; };
 		494E142B2145371400D92CC5 /* ButtonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E142A2145371400D92CC5 /* ButtonRowView.swift */; };
+		49CAB52F215730B400C5CD8B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CAB52E215730B400C5CD8B /* ErrorView.swift */; };
+		49CAB531215730BF00C5CD8B /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CAB530215730BF00C5CD8B /* ErrorView.xib */; };
 		49D6BF482148B9B8000E422D /* CheckListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6BF472148B9B8000E422D /* CheckListRow.swift */; };
 		49D6BF4C2148B9CB000E422D /* CheckListRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D6BF4B2148B9CB000E422D /* CheckListRowView.xib */; };
 		49D6BF4E2148BA46000E422D /* CheckListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6BF4D2148BA46000E422D /* CheckListRowView.swift */; };
+		49DB266221573CBE00A2B1E2 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB266121573CBE00A2B1E2 /* HintView.swift */; };
+		49DB266421573CC600A2B1E2 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DB266321573CC600A2B1E2 /* HintView.xib */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -60,9 +64,13 @@
 		494E1426214536F700D92CC5 /* ButtonRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonRowView.xib; sourceTree = "<group>"; };
 		494E14282145370B00D92CC5 /* ButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRow.swift; sourceTree = "<group>"; };
 		494E142A2145371400D92CC5 /* ButtonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRowView.swift; sourceTree = "<group>"; };
+		49CAB52E215730B400C5CD8B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		49CAB530215730BF00C5CD8B /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		49D6BF472148B9B8000E422D /* CheckListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListRow.swift; sourceTree = "<group>"; };
 		49D6BF4B2148B9CB000E422D /* CheckListRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListRowView.xib; sourceTree = "<group>"; };
 		49D6BF4D2148BA46000E422D /* CheckListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListRowView.swift; sourceTree = "<group>"; };
+		49DB266121573CBE00A2B1E2 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
+		49DB266321573CC600A2B1E2 /* HintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AstroForms_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroForms_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				494E13BB213F683600D92CC5 /* Rows */,
+				49CAB52C215730A400C5CD8B /* Helpers */,
 			);
 			path = Plain;
 			sourceTree = "<group>";
@@ -185,10 +194,27 @@
 			path = ButtonRow;
 			sourceTree = "<group>";
 		};
+		49CAB52C215730A400C5CD8B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49CAB52D215730AD00C5CD8B /* ErrorView */,
+				49DB266021573CB600A2B1E2 /* HintView */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		49CAB52D215730AD00C5CD8B /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				49CAB52E215730B400C5CD8B /* ErrorView.swift */,
+				49CAB530215730BF00C5CD8B /* ErrorView.xib */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
 		49D6BF4621489BF1000E422D /* ListRow */ = {
 			isa = PBXGroup;
 			children = (
-				49EEB136214F3421000F7BC7 /* Subrows */,
 				49D6BF472148B9B8000E422D /* CheckListRow.swift */,
 				49D6BF4D2148BA46000E422D /* CheckListRowView.swift */,
 				49D6BF4B2148B9CB000E422D /* CheckListRowView.xib */,
@@ -196,11 +222,13 @@
 			path = ListRow;
 			sourceTree = "<group>";
 		};
-		49EEB136214F3421000F7BC7 /* Subrows */ = {
+		49DB266021573CB600A2B1E2 /* HintView */ = {
 			isa = PBXGroup;
 			children = (
+				49DB266121573CBE00A2B1E2 /* HintView.swift */,
+				49DB266321573CC600A2B1E2 /* HintView.xib */,
 			);
-			path = Subrows;
+			path = HintView;
 			sourceTree = "<group>";
 		};
 		508CB67FC6A1509675A5829B /* Frameworks */ = {
@@ -389,7 +417,9 @@
 				494E1427214536F700D92CC5 /* ButtonRowView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				494E140F2140E14700D92CC5 /* TextFieldRowView.xib in Resources */,
+				49DB266421573CC600A2B1E2 /* HintView.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				49CAB531215730BF00C5CD8B /* ErrorView.xib in Resources */,
 				494E1417214271C600D92CC5 /* TextViewRowView.xib in Resources */,
 				49D6BF4C2148B9CB000E422D /* CheckListRowView.xib in Resources */,
 			);
@@ -475,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				49DB266221573CBE00A2B1E2 /* HintView.swift in Sources */,
 				494E14102140E14700D92CC5 /* TextFieldRowView.swift in Sources */,
 				494E14132142716900D92CC5 /* TextViewRow.swift in Sources */,
 				494E13BA213F677600D92CC5 /* PlainKitchenSinkForm.swift in Sources */,
@@ -485,6 +516,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				49D6BF482148B9B8000E422D /* CheckListRow.swift in Sources */,
 				494E14152142717500D92CC5 /* TextViewRowView.swift in Sources */,
+				49CAB52F215730B400C5CD8B /* ErrorView.swift in Sources */,
 				494E142B2145371400D92CC5 /* ButtonRowView.swift in Sources */,
 				494E142221433F8800D92CC5 /* SwitchRowView.swift in Sources */,
 			);

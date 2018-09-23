@@ -31,9 +31,16 @@ public protocol AnyRow: class {
     
     func show(animated: Bool)
     
-    func showHelper<T: UIView>(view: T)
+    func showHelper<T: UIView>(
+        viewType: T.Type,
+        animated: Bool,
+        configureBlock: ((T) -> Void)?
+    ) throws
     
-    func hideHelper<T: UIView>(view: T)
+    func hideHelper(
+        animated: Bool,
+        callback: (() -> Void)?
+    )
     
     var tag: RowTag { get }
     
@@ -112,29 +119,139 @@ public extension Row {
     }
     
     // Need to distinguish between showing and adding items
-    func showHelper<T: UIView>(view: T) {
+    // Limitation at present, a row can only show one helper (although this
+    // might be a stackview itself.
+    
+    
+    
+    /// Show a helper view with an optional animation.
+    ///
+    /// - Parameters:
+    ///   - viewType: The helper view to show
+    ///   - animated: Whether or not to use the default fade in animation
+    ///   - configureBlock: A block for configuring the new helper
+    /// - Throws: An error if the helper cannot be shown
+    ///
+    /// This method takes a UIView subclass `type`, rather than an instance.
+    /// This makes usage easier, particularly for cases where the show
+    /// method is called multiple times.
+    func showHelper<T: UIView>(
+        viewType: T.Type,
+        animated: Bool,
+        configureBlock: ((T) -> Void)?
+    ) throws {
         
         // If there is no helper stackview, add it
         guard let topStackView = self.baseView.superview as? UIStackView else {
             return
         }
         
-        if topStackView.arrangedSubviews.count == 1 {
-            topStackView.addArrangedSubview(UIStackView())
+        guard let view: T =
+            topStackView.arrangedSubviews.last as? T ?? (try? viewType.fromXib()) else {
+            throw RowError.cannotInstantiateFromXib
         }
         
-        guard let helperStackView = topStackView
-            .arrangedSubviews.last as? UIStackView else {
-            return
+        view.isHidden = true
+        view.alpha = 0
+        
+        func animateAndConfigureNewView(animated: Bool) {
+            
+            // Add the view if it doesn't exist
+            let viewExists = topStackView.arrangedSubviews.count <= 1
+            
+            if viewExists {
+                topStackView.addArrangedSubview(view)
+            } else {
+                view.isHidden = false
+                view.alpha = 1
+                configureBlock?(view)
+                return
+            }
+            
+            guard animated else {
+                view.isHidden = false
+                view.alpha = 1
+                configureBlock?(view)
+                return
+            }
+            
+            configureBlock?(view)
+            
+            UIView.animate(withDuration: 0.1, delay: 0.2, options: [], animations: {
+                view.alpha = 1
+            })
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                view.isHidden = false
+                view.alpha = 1
+                
+                // TODO: iOS 11 specific code. Figure out if it is still required.
+                // Breaks in iOS 12.
+                //view.superview?.layoutIfNeeded()
+                
+            })
+            
         }
         
-        helperStackView.addArrangedSubview(view)
+        let lastViewOfDifferentType: UIView? =
+            topStackView.arrangedSubviews.count > 1
+            && topStackView.arrangedSubviews.last as? T == nil
+                ? topStackView.arrangedSubviews.last
+                : nil
+        
+        if let _lastViewOfDifferentType = lastViewOfDifferentType {
+            
+            hideHelper(animated: animated) {
+                animateAndConfigureNewView(animated: animated)
+            }
+
+        } else {
+            animateAndConfigureNewView(animated: animated)
+        }
         
     }
     
-    func hideHelper<T>(view: T) where T : UIView {
+    func hideHelper(animated: Bool = false, callback: (() -> Void)? = nil) {
         
+        guard let topStackView = self.baseView.superview as? UIStackView else {
+            return
+        }
         
+        guard
+            topStackView.arrangedSubviews.count > 1,
+            let helperView = topStackView.arrangedSubviews.last else {
+                    return
+        }
+        
+        guard animated else {
+            helperView.alpha = 0
+            helperView.isHidden = true
+            topStackView.removeArrangedSubview(helperView)
+            helperView.removeFromSuperview()
+            callback?()
+            return
+        }
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            helperView.alpha = 0
+            
+        }) { _ in
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                
+                helperView.isHidden = true
+                
+            }, completion: { _ in
+                
+                DispatchQueue.main.async {
+                    topStackView.removeArrangedSubview(helperView)
+                    helperView.removeFromSuperview()
+                    callback?()
+                }
+                
+            })
+            
+        }
         
     }
     

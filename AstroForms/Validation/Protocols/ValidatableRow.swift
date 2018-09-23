@@ -29,6 +29,7 @@ public protocol ValidatableForm {
 
 public extension ValidatableForm {
     
+    @discardableResult
     public func validate<R: ValueRow>(
         row: R,
         _ rules: ValidationRuleMsgBlock<R>...) -> (Bool, String?) {
@@ -45,6 +46,7 @@ public extension ValidatableForm {
         
     }
     
+    @discardableResult
     public func validate<R: ValueRow>(
         row: R,
         _ rules: ValidationRuleBlock<R>...) -> Bool {
@@ -61,6 +63,7 @@ public extension ValidatableForm {
         
     }
     
+    @discardableResult
     func validateList<R: ValueRow>(
         row: R,
         _ rules: ValidationRuleMsgBlock<R>...) -> [(Bool, String?)] {
