@@ -10,7 +10,7 @@ import UIKit
 
 typealias VoidCallback = () -> Void
 
-open class Form: UIView, RowDelegate {
+open class Form: UIView, RowDelegate, ValidatableForm {
     
     let scrollView = UIScrollView()
     
@@ -63,8 +63,6 @@ open class Form: UIView, RowDelegate {
         
     }
     
-    open func submit() {}
-    
     // Subclasses cannot override protocol extension of superclasses
     
     open func rowDidStartEditing(row: AnyRow) {}
@@ -76,6 +74,7 @@ open class Form: UIView, RowDelegate {
     open func rowDidFocus(row: AnyRow) {}
     
     open func rowDidBlur(row: AnyRow) {}
-
+    
+    open func rowUpdate(type: RowUpdate, row: AnyRow) {}
     
 }

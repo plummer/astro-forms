@@ -26,17 +26,13 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
     var tag: RowTag
     
     var view: TextFieldRowView
-    
+
     var focusElement: UIResponder { return view.textField }
     
     /// The `UITextField` input value.
     var value: Value {
         
-        get {
-            
-            return view.textField.text ?? ""
-            
-        }
+        get {  return view.textField.text ?? "" }
         
         set { view.textField.text = newValue }
         

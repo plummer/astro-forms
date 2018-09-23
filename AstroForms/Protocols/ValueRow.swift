@@ -17,3 +17,9 @@ public protocol ValueRow: ValueViewDelegate {
     var value: Value { get set }
   
 }
+
+public protocol ValidatableRow {
+    
+    var isValid: (() -> Bool)? { get set }
+    
+}

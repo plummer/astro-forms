@@ -19,18 +19,6 @@ public protocol RowDelegate {
     
     func rowDidBlur(row: AnyRow)
     
-}
-
-public extension RowDelegate where Self: AnyRow {
-    
-    func rowDidStartEditing(row: AnyRow) {}
-    
-    func rowDidEndEditing(row: AnyRow) {}
-    
-    func rowDidEdit(row: AnyRow) {}
-    
-    func rowDidFocus(row: AnyRow) {}
-    
-    func rowDidBlur(row: AnyRow) {}
+    func rowUpdate(type: RowUpdate, row: AnyRow)
     
 }

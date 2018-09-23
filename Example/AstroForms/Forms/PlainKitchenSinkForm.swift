@@ -9,7 +9,7 @@
 import Foundation
 import AstroForms
 
-class PlainKitchenSinkForm: Form, ValidatableForm {
+class PlainKitchenSinkForm: Form {
     
     enum KitchenSinkTag: RowTag, Equatable {
         case
@@ -77,18 +77,20 @@ class PlainKitchenSinkForm: Form, ValidatableForm {
         
     }
     
-    override func rowDidEdit(row: AnyRow) {
+    override func rowUpdate(type: RowUpdate, row: AnyRow) {
         
-        print("row", row)
-        
-    }
-    
-    override func rowDidEndEditing(row: AnyRow) {
-
-        guard let tag = row.tag as? KitchenSinkTag else { return }
-        
-        switch tag {
-        case .email:
+        switch type {
+            
+        case .live:
+            break
+            
+        case .onResignActive:
+            break
+            
+        case .onResignActiveAfterChange:
+            break
+            
+        case .regular:
             
             guard let helloWorldRow = row as? TextFieldRow else {
                 return
@@ -103,7 +105,6 @@ class PlainKitchenSinkForm: Form, ValidatableForm {
             
             print("example email validity", isValid)
             
-        default: break
         }
         
     }

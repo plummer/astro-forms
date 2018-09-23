@@ -28,18 +28,37 @@ public protocol ValueViewDelegate: class {
 public extension ValueViewDelegate where Self: AnyRow {
 
     func valueDidEdit() {
+        
         form?.rowDidEdit(row: self)
         self.valueHasChanged = true
+        
+        form?.rowUpdate(type: .live, row: self)
+        
+        if valueHasEndedEditing {
+            form?.rowUpdate(type: .regular, row: self)
+        }
+        
     }
     
     func valueDidStartEditing() {
+        
         form?.rowDidStartEditing(row: self)
         self.valueHasStartedEditing = true
+        
     }
     
     func valueDidEndEditing() {
+        
         form?.rowDidEndEditing(row: self)
         self.valueHasEndedEditing = true
+        
+        form?.rowUpdate(type: .onResignActive, row: self)
+        
+        if valueHasChanged {
+            form?.rowUpdate(type: .onResignActiveAfterChange, row: self)
+            form?.rowUpdate(type: .regular, row: self)
+        }
+        
     }
     
 }

@@ -31,6 +31,10 @@ public protocol AnyRow: class {
     
     func show(animated: Bool)
     
+    func showHelper<T: UIView>(view: T)
+    
+    func hideHelper<T: UIView>(view: T)
+    
     var tag: RowTag { get }
     
 }
@@ -104,6 +108,33 @@ public extension Row {
         }
         
         return parentForm
+        
+    }
+    
+    // Need to distinguish between showing and adding items
+    func showHelper<T: UIView>(view: T) {
+        
+        // If there is no helper stackview, add it
+        guard let topStackView = self.baseView.superview as? UIStackView else {
+            return
+        }
+        
+        if topStackView.arrangedSubviews.count == 1 {
+            topStackView.addArrangedSubview(UIStackView())
+        }
+        
+        guard let helperStackView = topStackView
+            .arrangedSubviews.last as? UIStackView else {
+            return
+        }
+        
+        helperStackView.addArrangedSubview(view)
+        
+    }
+    
+    func hideHelper<T>(view: T) where T : UIView {
+        
+        
         
     }
     

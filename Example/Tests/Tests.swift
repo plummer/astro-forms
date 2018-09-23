@@ -2,7 +2,7 @@ import AstroForms
 import XCTest
 
 
-class TestForm: Form, ValidatableForm {
+class TestForm: Form {
 
 }
 
@@ -69,7 +69,7 @@ class ValidationTests: XCTestCase {
         
     }
     
-    /// The validation error status and message should be correect
+    /// The validation error status and message should be correct
     func testMessageValidation() {
         
         let message = "The input string must equal astro"
