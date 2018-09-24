@@ -25,10 +25,10 @@ class ButtonRow: Row {
     
     var title: String? {
         get {
-            return view.button.titleLabel?.text
+            return view.button.title(for: .normal)
         }
         set {
-            view.button.titleLabel?.text = newValue
+            view.button.setTitle(newValue, for: .normal)
         }
     }
     
