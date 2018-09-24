@@ -40,9 +40,9 @@ class SwitchRow: Row, ValueRow {
         
     }
     
-    init(tag: RowTag) throws {
+    init(tag: RowTag) {
         
-        let view: View = try View.fromXib()
+        let view: View = View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self
@@ -50,9 +50,9 @@ class SwitchRow: Row, ValueRow {
         
     }
     
-    convenience init(tag: RowTag, title: String, value: Bool) throws {
+    convenience init(tag: RowTag, title: String, value: Bool) {
         
-        try self.init(tag: tag)
+        self.init(tag: tag)
         self.title = title
         self.value = value
         

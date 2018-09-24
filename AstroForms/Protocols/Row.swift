@@ -35,7 +35,7 @@ public protocol AnyRow: class {
         viewType: T.Type,
         animated: Bool,
         configureBlock: ((T) -> Void)?
-    ) throws
+    )
     
     func hideHelper(
         animated: Bool,
@@ -139,17 +139,16 @@ public extension Row {
         viewType: T.Type,
         animated: Bool,
         configureBlock: ((T) -> Void)?
-    ) throws {
+    ) {
         
         // If there is no helper stackview, add it
         guard let topStackView = self.baseView.superview as? UIStackView else {
             return
         }
         
-        guard let view: T =
-            topStackView.arrangedSubviews.last as? T ?? (try? viewType.fromXib()) else {
-            throw RowError.cannotInstantiateFromXib
-        }
+        let view: T =
+            (topStackView.arrangedSubviews.last as? T)
+            ?? viewType.fromXib()
         
         view.isHidden = true
         view.alpha = 0

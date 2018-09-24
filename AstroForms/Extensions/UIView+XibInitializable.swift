@@ -18,7 +18,7 @@ extension UIView {
     ///
     /// To use a subclass, add the type annotation.
     /// i.e. `let subclass: SubclassUIView = try SubclassUIView.fromXib()`
-    public static func fromXib<T: UIView>() throws -> T {
+    public static func fromXib<T: UIView>() -> T {
         
         guard
             let nib = Bundle.main.loadNibNamed(
@@ -27,7 +27,16 @@ extension UIView {
                 options: nil
                 )?.first,
             let view = nib as? T else {
-                throw RowError.cannotInstantiateFromXib
+                
+                fatalError(
+                    """
+                    ---
+                    🚨 Fatal Error: Attempt to instantiate Nib:
+                    \(String(describing: T.self)) however it does not exist.
+                    ---
+                    """
+                )
+                
         }
         
         return view

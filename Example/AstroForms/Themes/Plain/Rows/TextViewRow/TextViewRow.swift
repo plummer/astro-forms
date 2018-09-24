@@ -72,9 +72,9 @@ class TextViewRow: Row, ValueRow, FocusableRow {
         
     }
     
-    init(tag: RowTag) throws {
+    init(tag: RowTag) {
         
-        let view: View = try View.fromXib()
+        let view: View = View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self
@@ -82,9 +82,9 @@ class TextViewRow: Row, ValueRow, FocusableRow {
         
     }
     
-    convenience init(tag: RowTag, height: CGFloat) throws {
+    convenience init(tag: RowTag, height: CGFloat) {
         
-        try self.init(tag: tag)
+        self.init(tag: tag)
         self.height = height
         
     }

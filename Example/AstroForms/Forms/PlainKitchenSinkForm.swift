@@ -26,7 +26,82 @@ class PlainKitchenSinkForm: Form {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let textField = TextFieldRow(
+            tag: KitchenSinkTag.email,
+            title: "Email",
+            value: nil,
+            placeholder: "email@astroforms.com",
+            keyboardType: .emailAddress,
+            isSecureTextEntry: false,
+            clearButtonMode: .whileEditing
+        )
         
+        textField.onRowUpdate = {[unowned self] in
+            
+            guard $0 == .regular else {
+                return
+            }
+            
+            if self.validate(
+                row: textField,
+                { $0.count > 5 }
+                ) {
+                
+                textField.view.label.textColor = .red
+
+                textField.showHelper(
+                    viewType: ErrorView.self,
+                    animated: true
+                ) { view in
+                    view.label.text =
+                    """
+                    \(textField.value.count) characters entered, the maximum is 5
+                    """
+                }
+                
+            } else {
+                
+                textField.view.label.textColor = .black
+                
+                textField.hideHelper(animated: true)
+                
+            }
+            
+        }
+        
+        let passwordField = TextFieldRow(
+            tag: KitchenSinkTag.password,
+            title: "Password",
+            value: nil,
+            placeholder: "******",
+            keyboardType: .default,
+            isSecureTextEntry: true,
+            clearButtonMode: .always
+        )
+        
+        textField.focusRect = {
+            CGRect(
+                x: textField.baseView.frame.origin.x,
+                y: textField.baseView.frame.origin.y,
+                width: textField.baseView.frame.width,
+                height: textField.baseView.frame.height + passwordField.baseView.frame.height
+            )
+        }
+        
+        self.add(textField)
+        
+        textField.showHelper(viewType: HintView.self, animated: false) {
+            $0.title = "Start here by entering a valid email..."
+        }
+        
+        self.add(passwordField)
+        
+        let buttonRowView = ButtonRow(
+            tag: KitchenSinkTag.submit,
+            title: "Submit",
+            tapBlock: self.submit)
+        
+        self.add(buttonRowView)
         
     }
     
@@ -35,56 +110,7 @@ class PlainKitchenSinkForm: Form {
         
         if hasFirstRun == false {
             
-            do {
-                
-                let textField = try TextFieldRow(
-                    tag: KitchenSinkTag.email,
-                    title: "Email",
-                    value: nil,
-                    placeholder: "email@astroforms.com",
-                    keyboardType: .emailAddress,
-                    isSecureTextEntry: false,
-                    clearButtonMode: .whileEditing
-                )
-                
-                let passwordField = try TextFieldRow(
-                    tag: KitchenSinkTag.password,
-                    title: "Password",
-                    value: nil,
-                    placeholder: "******",
-                    keyboardType: .default,
-                    isSecureTextEntry: true,
-                    clearButtonMode: .always
-                )
-                
-                textField.focusRect = {
-                    CGRect(
-                        x: textField.baseView.frame.origin.x,
-                        y: textField.baseView.frame.origin.y,
-                        width: textField.baseView.frame.width,
-                        height: textField.baseView.frame.height + passwordField.baseView.frame.height
-                    )
-                }
-                
-                self.add(textField)
-                
-                try textField.showHelper(viewType: HintView.self, animated: false) {
-                    $0.title = "Start here by entering a valid email..."
-                }
-                
-                self.add(passwordField)
-                
-                let buttonRowView = try ButtonRow(
-                    tag: KitchenSinkTag.submit,
-                    title: "Submit",
-                    tapBlock: self.submit)
-                
-                self.add(buttonRowView)
-                
-                
-            } catch let error {
-                debugPrint("Error:", error)
-            }
+            
             
             hasFirstRun = true
             setNeedsLayout()
@@ -97,6 +123,7 @@ class PlainKitchenSinkForm: Form {
     func submit() { }
     
     override func rowUpdate(type: RowUpdate, row: AnyRow) {
+        super.rowUpdate(type: type, row: row)
         
         switch type {
             
@@ -116,31 +143,7 @@ class PlainKitchenSinkForm: Form {
             }
             
             guard helloWorldRow.tag as! KitchenSinkTag == KitchenSinkTag.email else { return }
-            
-            if validate(
-                row: helloWorldRow,
-                { $0.count > 5 }
-                ) {
-                
-                do {
-                    try helloWorldRow.showHelper(
-                        viewType: ErrorView.self,
-                        animated: true
-                    ) { view in
-                        
-                        view.label.text = "\(helloWorldRow.value.count) characters entered, the maximum is 5"
-                        
-                    }
-                } catch {
-                    
-                }
-                
-            } else {
-                
-                helloWorldRow.hideHelper(animated: true)
-                
-            }
-            
+
         }
         
     }

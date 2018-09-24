@@ -50,17 +50,17 @@ class CheckListRow: Row, ValueRow {
         view.stackView.addArrangedSubview(item.view)
     }
     
-    init(tag: RowTag) throws {
+    init(tag: RowTag) {
         
         self.tag = tag
-        let view: View = try View.fromXib()
+        let view: View = View.fromXib()
         self.view = view
         
     }
     
-    convenience init(tag: RowTag, items: [SwitchRow]) throws {
+    convenience init(tag: RowTag, items: [SwitchRow]) {
         
-        try self.init(tag: tag)
+        self.init(tag: tag)
         items.forEach { addItem(item: $0) }
         
     }

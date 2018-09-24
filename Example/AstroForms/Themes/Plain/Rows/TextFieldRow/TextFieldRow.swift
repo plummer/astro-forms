@@ -11,9 +11,11 @@ import UIKit
 import AstroForms
 
 /// A basic text field and label row.
-class TextFieldRow: Row, ValueRow, FocusableRow {
+class TextFieldRow: Row, ValueRow, FocusableRow, RowUpdateResponder {
     
     var valueHasStartedEditing: Bool = false
+    
+    var onRowUpdate: ((RowUpdate) -> Void)? = nil
     
     var valueHasChanged: Bool = false
     
@@ -88,9 +90,9 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
         keyboardType: UIKeyboardType = UIKeyboardType.default,
         isSecureTextEntry: Bool = false,
         clearButtonMode: UITextField.ViewMode = UITextField.ViewMode.never
-    ) throws {
+    ) {
         
-        try self.init(tag: tag)
+        self.init(tag: tag)
         self.title = title
         self.value = value ?? ""
         self.placeholder = placeholder ?? ""
@@ -101,9 +103,9 @@ class TextFieldRow: Row, ValueRow, FocusableRow {
 
     }
     
-    init(tag: RowTag) throws {
+    init(tag: RowTag) {
         
-        let view: View = try View.fromXib()
+        let view: View = View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self

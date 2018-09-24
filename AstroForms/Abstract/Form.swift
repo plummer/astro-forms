@@ -75,6 +75,10 @@ open class Form: UIView, RowDelegate, ValidatableForm {
     
     open func rowDidBlur(row: AnyRow) {}
     
-    open func rowUpdate(type: RowUpdate, row: AnyRow) {}
+    open func rowUpdate(type: RowUpdate, row: AnyRow) {
+        
+        self.rows.forEach { ($0 as? RowUpdateResponder)?.onRowUpdate?(type) }
+        
+    }
     
 }
