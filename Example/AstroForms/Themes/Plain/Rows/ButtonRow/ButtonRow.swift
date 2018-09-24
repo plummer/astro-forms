@@ -42,17 +42,4 @@ class ButtonRow: Row {
         
     }
     
-    convenience init(
-        tag: RowTag,
-        title: String,
-        tapBlock: (() -> Void)? = nil
-    ) {
-    
-        self.init(tag: tag) {
-            $0.title = title
-            $0.buttonTapBlock = tapBlock
-        }
-    
-    }
-    
 }

@@ -11,9 +11,7 @@ import AstroForms
 
 class PlainKitchenSinkForm: Form {
     
-    var hasFirstRun: Bool = false
-    
-    enum KitchenSinkTag: RowTag, Equatable {
+    enum LoginTag: RowTag, Equatable {
         case
         termsConditions,
         about,
@@ -26,44 +24,18 @@ class PlainKitchenSinkForm: Form {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let textField = TextFieldRow(tag: KitchenSinkTag.email) { row in
+        let textField = TextFieldRow(tag: LoginTag.email) { row in
             row.view.textField.placeholder = "Enter your email..."
-            
-            row.onRowUpdate = {[unowned self] update in
-                
-                guard update == .regular else {
-                    return
-                }
-                
-                if self.validate(
-                    row: row,
-                    { $0.count > 5 }
-                    ) {
-                    
-                    row.view.label.textColor = .red
-                    
-                    row.showHelper(
-                        viewType: ErrorView.self,
-                        animated: true
-                    ) { view in
-                        view.label.text =
-                        """
-                        \(row.value.count) characters entered, the maximum is 5
-                        """
-                    }
-                    
-                } else {
-                    
-                    row.view.label.textColor = .black
-                    row.hideHelper(animated: true)
-                    
-                }
-            }
-            
         }
         
-        let passwordField = TextFieldRow(tag: KitchenSinkTag.password) {
+        let passwordField = TextFieldRow(tag: LoginTag.password) {
             $0.view.label.text = "Password"
+            $0.view.textField.isSecureTextEntry = true
+        }
+        
+        let rememberMe = SwitchRow(tag: LoginTag.termsConditions) {
+            $0.value = true
+            $0.view.label.text = "Remember Me"
         }
         
         textField.focusRect = {
@@ -83,19 +55,51 @@ class PlainKitchenSinkForm: Form {
         
         self.add(passwordField)
         
+        self.add(rememberMe)
+        
         let buttonRowView = ButtonRow(
-            tag: KitchenSinkTag.submit,
-            title: "Submit",
-            tapBlock: self.submit)
+            tag: LoginTag.submit
+        )
         
         self.add(buttonRowView)
         
     }
     
-    func submit() { }
+    func validateEmailRow(row: TextFieldRow) {
+        
+        guard self.validate(row: row, ValidationRule.required) else {
+            
+            row.showHelper(viewType: HintView.self, animated: true) {
+                $0.label.text = "Enter an email to get started..."
+            }
+            
+            return
+        }
+        
+        if self.validate(row: row, ValidationRule.isEmail) {
+
+            row.showHelper(viewType: HintView.self, animated: true) {
+                $0.label.text = "Your new username will be \(row.value)"
+            }
+            
+        } else {
+            row.hideHelper(animated: true)
+        }
+        
+    }
+    
+    override func submit() {
+        super.submit()
+    }
     
     override func rowUpdate(type: RowUpdate, row: AnyRow) {
-        super.rowUpdate(type: type, row: row)
+        
+        guard let tag = row.tag as? LoginTag else { return }
+        guard type == .regular else { return }
+        
+        if tag == LoginTag.email, let row = row as? TextFieldRow {
+            validateEmailRow(row: row)
+        }
         
         switch type {
             
@@ -114,7 +118,7 @@ class PlainKitchenSinkForm: Form {
                 return
             }
             
-            guard helloWorldRow.tag as! KitchenSinkTag == KitchenSinkTag.email else { return }
+            guard helloWorldRow.tag as! LoginTag == LoginTag.email else { return }
 
         }
         

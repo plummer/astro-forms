@@ -20,6 +20,10 @@
 		494E1427214536F700D92CC5 /* ButtonRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494E1426214536F700D92CC5 /* ButtonRowView.xib */; };
 		494E14292145370B00D92CC5 /* ButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E14282145370B00D92CC5 /* ButtonRow.swift */; };
 		494E142B2145371400D92CC5 /* ButtonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E142A2145371400D92CC5 /* ButtonRowView.swift */; };
+		49B177002158AFCB00EEEECA /* CustomNibRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B176FF2158AFCB00EEEECA /* CustomNibRow.swift */; };
+		49B177042158B22600EEEECA /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B177032158B22600EEEECA /* LoginForm.swift */; };
+		49B177072158B50900EEEECA /* HeroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B177062158B50900EEEECA /* HeroView.xib */; };
+		49B177092158B55200EEEECA /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B177082158B55200EEEECA /* HeroView.swift */; };
 		49CAB52F215730B400C5CD8B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CAB52E215730B400C5CD8B /* ErrorView.swift */; };
 		49CAB531215730BF00C5CD8B /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CAB530215730BF00C5CD8B /* ErrorView.xib */; };
 		49D6BF482148B9B8000E422D /* CheckListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6BF472148B9B8000E422D /* CheckListRow.swift */; };
@@ -64,6 +68,10 @@
 		494E1426214536F700D92CC5 /* ButtonRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonRowView.xib; sourceTree = "<group>"; };
 		494E14282145370B00D92CC5 /* ButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRow.swift; sourceTree = "<group>"; };
 		494E142A2145371400D92CC5 /* ButtonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRowView.swift; sourceTree = "<group>"; };
+		49B176FF2158AFCB00EEEECA /* CustomNibRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNibRow.swift; sourceTree = "<group>"; };
+		49B177032158B22600EEEECA /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
+		49B177062158B50900EEEECA /* HeroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroView.xib; sourceTree = "<group>"; };
+		49B177082158B55200EEEECA /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
 		49CAB52E215730B400C5CD8B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		49CAB530215730BF00C5CD8B /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		49D6BF472148B9B8000E422D /* CheckListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListRow.swift; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				494E13B9213F677600D92CC5 /* PlainKitchenSinkForm.swift */,
+				49B177032158B22600EEEECA /* LoginForm.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -146,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				49D6BF4621489BF1000E422D /* ListRow */,
+				49B176FE2158AFC000EEEECA /* CustomViewRow */,
 				494E1425214536EE00D92CC5 /* ButtonRow */,
 				494E141E21433F7800D92CC5 /* SwitchRow */,
 				494E14112142716000D92CC5 /* TextViewRow */,
@@ -192,6 +202,24 @@
 				494E142A2145371400D92CC5 /* ButtonRowView.swift */,
 			);
 			path = ButtonRow;
+			sourceTree = "<group>";
+		};
+		49B176FE2158AFC000EEEECA /* CustomViewRow */ = {
+			isa = PBXGroup;
+			children = (
+				49B177052158B50200EEEECA /* Custom Views */,
+				49B176FF2158AFCB00EEEECA /* CustomNibRow.swift */,
+			);
+			path = CustomViewRow;
+			sourceTree = "<group>";
+		};
+		49B177052158B50200EEEECA /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				49B177062158B50900EEEECA /* HeroView.xib */,
+				49B177082158B55200EEEECA /* HeroView.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		49CAB52C215730A400C5CD8B /* Helpers */ = {
@@ -412,6 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B177072158B50900EEEECA /* HeroView.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				494E142421433F9100D92CC5 /* SwitchRowView.xib in Resources */,
 				494E1427214536F700D92CC5 /* ButtonRowView.xib in Resources */,
@@ -506,16 +535,19 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				49DB266221573CBE00A2B1E2 /* HintView.swift in Sources */,
+				49B177092158B55200EEEECA /* HeroView.swift in Sources */,
 				494E14102140E14700D92CC5 /* TextFieldRowView.swift in Sources */,
 				494E14132142716900D92CC5 /* TextViewRow.swift in Sources */,
 				494E13BA213F677600D92CC5 /* PlainKitchenSinkForm.swift in Sources */,
 				494E14292145370B00D92CC5 /* ButtonRow.swift in Sources */,
+				49B177042158B22600EEEECA /* LoginForm.swift in Sources */,
 				494E142021433F8000D92CC5 /* SwitchRow.swift in Sources */,
 				49D6BF4E2148BA46000E422D /* CheckListRowView.swift in Sources */,
 				494E140E2140E14700D92CC5 /* TextFieldRow.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				49D6BF482148B9B8000E422D /* CheckListRow.swift in Sources */,
 				494E14152142717500D92CC5 /* TextViewRowView.swift in Sources */,
+				49B177002158AFCB00EEEECA /* CustomNibRow.swift in Sources */,
 				49CAB52F215730B400C5CD8B /* ErrorView.swift in Sources */,
 				494E142B2145371400D92CC5 /* ButtonRowView.swift in Sources */,
 				494E142221433F8800D92CC5 /* SwitchRowView.swift in Sources */,

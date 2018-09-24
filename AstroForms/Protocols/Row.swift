@@ -34,7 +34,7 @@ public protocol AnyRow: class {
     func showHelper<T: UIView>(
         viewType: T.Type,
         animated: Bool,
-        configureBlock: ((T) -> Void)?
+        config: ((T) -> Void)?
     )
     
     func hideHelper(
@@ -129,7 +129,7 @@ public extension Row {
     /// - Parameters:
     ///   - viewType: The helper view to show
     ///   - animated: Whether or not to use the default fade in animation
-    ///   - configureBlock: A block for configuring the new helper
+    ///   - config: A block for configuring the new helper
     /// - Throws: An error if the helper cannot be shown
     ///
     /// This method takes a UIView subclass `type`, rather than an instance.
@@ -138,7 +138,7 @@ public extension Row {
     func showHelper<T: UIView>(
         viewType: T.Type,
         animated: Bool,
-        configureBlock: ((T) -> Void)?
+        config: ((T) -> Void)?
     ) {
         
         // If there is no helper stackview, add it
@@ -163,18 +163,18 @@ public extension Row {
             } else {
                 view.isHidden = false
                 view.alpha = 1
-                configureBlock?(view)
+                config?(view)
                 return
             }
             
             guard animated else {
                 view.isHidden = false
                 view.alpha = 1
-                configureBlock?(view)
+                config?(view)
                 return
             }
             
-            configureBlock?(view)
+            config?(view)
             
             UIView.animate(withDuration: 0.1, delay: 0.2, options: [], animations: {
                 view.alpha = 1

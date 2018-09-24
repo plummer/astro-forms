@@ -26,13 +26,13 @@ open class Form: UIView, RowDelegate, ValidatableForm {
     /// The base implementation just clears the rows, so it is safe to
     /// call multiple times.
     open func setupRows() {
-        
+    
         // Remove all existing rows and views, so this function always refreshes
         //the view entirely.
         rows = []
-        
-    }
     
+    }
+
     open func findRow<TagType: Equatable, RowType>(
         tag: TagType
         ) -> RowType? {
@@ -63,6 +63,12 @@ open class Form: UIView, RowDelegate, ValidatableForm {
         
     }
     
+    //
+    
+    open func submit() {
+        self.firstResponder?.resignFirstResponder()
+    }
+    
     // Subclasses cannot override protocol extension of superclasses
     
     open func rowDidStartEditing(row: AnyRow) {}
@@ -75,10 +81,6 @@ open class Form: UIView, RowDelegate, ValidatableForm {
     
     open func rowDidBlur(row: AnyRow) {}
     
-    open func rowUpdate(type: RowUpdate, row: AnyRow) {
-        
-        self.rows.forEach { ($0 as? RowUpdateResponder)?.onRowUpdate?(type) }
-        
-    }
+    open func rowUpdate(type: RowUpdate, row: AnyRow) { }
     
 }

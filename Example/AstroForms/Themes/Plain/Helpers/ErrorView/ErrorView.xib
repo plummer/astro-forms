@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZU-Ea-lTC">
-                    <rect key="frame" x="20" y="5" width="335" height="657"/>
+                    <rect key="frame" x="20" y="0.0" width="335" height="667"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                     <color key="textColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -25,8 +25,8 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="PZU-Ea-lTC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Pf2-sm-j8z"/>
-                <constraint firstAttribute="bottom" secondItem="PZU-Ea-lTC" secondAttribute="bottom" constant="5" id="R4Q-XC-X8J"/>
+                <constraint firstItem="PZU-Ea-lTC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pf2-sm-j8z"/>
+                <constraint firstAttribute="bottom" secondItem="PZU-Ea-lTC" secondAttribute="bottom" id="R4Q-XC-X8J"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PZU-Ea-lTC" secondAttribute="trailing" constant="20" id="SKj-qV-3wn"/>
                 <constraint firstItem="PZU-Ea-lTC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="jP0-ir-FPH"/>
             </constraints>

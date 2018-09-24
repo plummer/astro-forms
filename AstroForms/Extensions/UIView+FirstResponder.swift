@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
     
     /// The first responder within this view's tree of views if it exists.
-    var firstResponder: UIView? {
+    public var firstResponder: UIView? {
         
         guard !isFirstResponder else { return self }
         

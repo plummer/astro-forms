@@ -11,11 +11,9 @@ import UIKit
 import AstroForms
 
 /// A basic text field and label row.
-class TextFieldRow: Row, ValueRow, FocusableRow, RowUpdateResponder {
+class TextFieldRow: Row, ValueRow, FocusableRow {
     
     var valueHasStartedEditing: Bool = false
-    
-    var onRowUpdate: ((RowUpdate) -> Void)? = nil
     
     var valueHasChanged: Bool = false
     

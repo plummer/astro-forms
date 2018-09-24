@@ -21,4 +21,8 @@ public struct ValidationRule {
         
     }
     
+    public static var required: (String) -> Bool {
+        return { !$0.isEmpty }
+    }
+    
 }
