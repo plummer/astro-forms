@@ -44,7 +44,7 @@ class LoginForm: Form {
     
     func setupForm() {
         
-        let heroRow = CustomNibRow<HeroView>(tag: LoginFormTag.hero) {
+        let heroRow = CustomViewRow<HeroView>(tag: LoginFormTag.hero) {
             $0.view.label.text = "Astro Forms\nPlain Login Example"
         }
         

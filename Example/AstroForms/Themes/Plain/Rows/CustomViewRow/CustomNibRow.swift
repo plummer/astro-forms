@@ -1,5 +1,5 @@
 //
-//  CustomNibRow.swift
+//  CustomViewRow
 //  AstroForms_Example
 //
 //  Created by Andrew Plummer on 24/9/18.
@@ -9,7 +9,7 @@
 import Foundation
 import AstroForms
 
-class CustomNibRow<T: UIView>: Row {
+class CustomViewRow<T: UIView>: Row {
     
     typealias View = T
     
@@ -17,7 +17,7 @@ class CustomNibRow<T: UIView>: Row {
     
     var tag: RowTag
     
-    init(tag: RowTag, config: ((CustomNibRow) -> Void)? = nil) {
+    init(tag: RowTag, config: ((CustomViewRow) -> Void)? = nil) {
         
         let view: T = T.fromXib()
         self.tag = tag
