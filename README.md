@@ -18,8 +18,8 @@ x Complete
 - [x] Stackview / form rendering
 - [x] Form submission
 - [x] Validation
-- [~] Accessibility ([WCAG 2.0 AA](https://www.w3.org/TR/mobile-accessibility-mapping))
-- [~] Documentation
+- [ ] Accessibility ([WCAG 2.0 AA](https://www.w3.org/TR/mobile-accessibility-mapping))
+- [ ] Documentation
 - [ ] Localization
 
 #### Included Row Examples
@@ -37,4 +37,4 @@ x Complete
 - [ ] Segmented control
 - [x] Button
 - [x] Custom view
-- [~] Astro theme
+- [ ] Astro theme
