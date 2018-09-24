@@ -32,29 +32,14 @@ class SwitchRow: Row, ValueRow {
         
     }
     
-    var title: String? {
-        
-        get { return view.label.text }
-        
-        set { view.label.text = newValue }
-        
-    }
-    
-    init(tag: RowTag) {
+    init(tag: RowTag, config: ((SwitchRow) -> Void)? = nil) {
         
         let view: View = View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self
+        config?(self)
         self.view.switch.accessibilityLabel = self.view.label.text
-        
-    }
-    
-    convenience init(tag: RowTag, title: String, value: Bool) {
-        
-        self.init(tag: tag)
-        self.title = title
-        self.value = value
         
     }
     

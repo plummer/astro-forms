@@ -26,58 +26,45 @@ class PlainKitchenSinkForm: Form {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let textField = TextFieldRow(
-            tag: KitchenSinkTag.email,
-            title: "Email",
-            value: nil,
-            placeholder: "email@astroforms.com",
-            keyboardType: .emailAddress,
-            isSecureTextEntry: false,
-            clearButtonMode: .whileEditing
-        )
-        
-        textField.onRowUpdate = {[unowned self] in
+        let textField = TextFieldRow(tag: KitchenSinkTag.email) { row in
+            row.view.textField.placeholder = "Enter your email..."
             
-            guard $0 == .regular else {
-                return
-            }
-            
-            if self.validate(
-                row: textField,
-                { $0.count > 5 }
-                ) {
+            row.onRowUpdate = {[unowned self] update in
                 
-                textField.view.label.textColor = .red
-
-                textField.showHelper(
-                    viewType: ErrorView.self,
-                    animated: true
-                ) { view in
-                    view.label.text =
-                    """
-                    \(textField.value.count) characters entered, the maximum is 5
-                    """
+                guard update == .regular else {
+                    return
                 }
                 
-            } else {
-                
-                textField.view.label.textColor = .black
-                
-                textField.hideHelper(animated: true)
-                
+                if self.validate(
+                    row: row,
+                    { $0.count > 5 }
+                    ) {
+                    
+                    row.view.label.textColor = .red
+                    
+                    row.showHelper(
+                        viewType: ErrorView.self,
+                        animated: true
+                    ) { view in
+                        view.label.text =
+                        """
+                        \(row.value.count) characters entered, the maximum is 5
+                        """
+                    }
+                    
+                } else {
+                    
+                    row.view.label.textColor = .black
+                    row.hideHelper(animated: true)
+                    
+                }
             }
             
         }
         
-        let passwordField = TextFieldRow(
-            tag: KitchenSinkTag.password,
-            title: "Password",
-            value: nil,
-            placeholder: "******",
-            keyboardType: .default,
-            isSecureTextEntry: true,
-            clearButtonMode: .always
-        )
+        let passwordField = TextFieldRow(tag: KitchenSinkTag.password) {
+            $0.view.label.text = "Password"
+        }
         
         textField.focusRect = {
             CGRect(
@@ -102,21 +89,6 @@ class PlainKitchenSinkForm: Form {
             tapBlock: self.submit)
         
         self.add(buttonRowView)
-        
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if hasFirstRun == false {
-            
-            
-            
-            hasFirstRun = true
-            setNeedsLayout()
-            layoutIfNeeded()
-            
-        }
         
     }
     

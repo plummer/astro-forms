@@ -32,12 +32,13 @@ class ButtonRow: Row {
         }
     }
     
-    init(tag: RowTag) {
+    init(tag: RowTag, config: ((ButtonRow) -> Void)? = nil) {
         
         let view: View = View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self
+        config?(self)
         
     }
     
@@ -47,9 +48,10 @@ class ButtonRow: Row {
         tapBlock: (() -> Void)? = nil
     ) {
     
-        self.init(tag: tag)
-        self.title = title
-        self.buttonTapBlock = tapBlock
+        self.init(tag: tag) {
+            $0.title = title
+            $0.buttonTapBlock = tapBlock
+        }
     
     }
     

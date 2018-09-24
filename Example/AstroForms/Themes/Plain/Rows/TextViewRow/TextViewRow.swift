@@ -29,38 +29,9 @@ class TextViewRow: Row, ValueRow, FocusableRow {
     
     var value: Value {
         
-        get {
-            
-            // Normalise the behaviour of an empty view with `UITextField`
-            return view.textView.text
-            
-        }
+        get { return view.textView.text }
         
         set { view.textView.text = newValue }
-        
-    }
-    
-    var title: String? {
-        
-        get { return view.label.text }
-        
-        set { view.label.text = newValue }
-        
-    }
-    
-    var keyboardType: UIKeyboardType {
-        
-        get { return view.textView.keyboardType }
-        
-        set { view.textView.keyboardType = newValue }
-        
-    }
-    
-    var isSecureTextEntry: Bool {
-        
-        get { return view.textView.isSecureTextEntry }
-        
-        set { view.textView.isSecureTextEntry = newValue }
         
     }
     
@@ -72,20 +43,14 @@ class TextViewRow: Row, ValueRow, FocusableRow {
         
     }
     
-    init(tag: RowTag) {
+    init(tag: RowTag, config: ((TextViewRow) -> Void)? = nil) {
         
         let view: View = View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self
+        config?(self)
         self.view.textView.accessibilityLabel = self.view.label.text ?? ""
-        
-    }
-    
-    convenience init(tag: RowTag, height: CGFloat) {
-        
-        self.init(tag: tag)
-        self.height = height
         
     }
 

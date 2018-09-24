@@ -40,75 +40,16 @@ class TextFieldRow: Row, ValueRow, FocusableRow, RowUpdateResponder {
         
     }
     
-    /// The `UITextField` placeholder text.
-    var placeholder: Value {
-        
-        get { return view.textField.placeholder ?? "" }
-        
-        set { view.textField.placeholder = newValue }
-        
-    }
-    
-    /// The `UILabel` above the text field.
-    var title: String? {
-        
-        get { return view.label.text }
-        
-        set { view.label.text = newValue }
-        
-    }
-
-    var keyboardType: UIKeyboardType {
-        
-        get { return view.textField.keyboardType }
-        
-        set { view.textField.keyboardType = newValue }
-        
-    }
-    
-    var isSecureTextEntry: Bool {
-        
-        get { return view.textField.isSecureTextEntry }
-        
-        set { view.textField.isSecureTextEntry = newValue }
-        
-    }
-    
-    var clearButtonMode: UITextField.ViewMode {
-        
-        get { return view.textField.clearButtonMode }
-        
-        set { view.textField.clearButtonMode = newValue }
-        
-    }
-    
-    convenience init(
-        tag: RowTag,
-        title: String? = nil,
-        value: String? = nil,
-        placeholder: String? = nil,
-        keyboardType: UIKeyboardType = UIKeyboardType.default,
-        isSecureTextEntry: Bool = false,
-        clearButtonMode: UITextField.ViewMode = UITextField.ViewMode.never
-    ) {
-        
-        self.init(tag: tag)
-        self.title = title
-        self.value = value ?? ""
-        self.placeholder = placeholder ?? ""
-        self.keyboardType = keyboardType
-        self.isSecureTextEntry = isSecureTextEntry
-        self.clearButtonMode = clearButtonMode
-        self.view.textField.accessibilityLabel = self.view.label.text ?? ""
-
-    }
-    
-    init(tag: RowTag) {
+    init(tag: RowTag, config: ((TextFieldRow) -> Void)? = nil) {
         
         let view: View = View.fromXib()
         self.view = view
         self.tag = tag
         self.view.row = self
+        
+        config?(self)
+        
+        self.view.textField.accessibilityLabel = self.view.label.text ?? ""
         
     }
     
