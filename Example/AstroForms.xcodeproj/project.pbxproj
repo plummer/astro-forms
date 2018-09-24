@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		494E13BA213F677600D92CC5 /* PlainKitchenSinkForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E13B9213F677600D92CC5 /* PlainKitchenSinkForm.swift */; };
 		494E140E2140E14700D92CC5 /* TextFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E140B2140E14700D92CC5 /* TextFieldRow.swift */; };
 		494E140F2140E14700D92CC5 /* TextFieldRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494E140C2140E14700D92CC5 /* TextFieldRowView.xib */; };
 		494E14102140E14700D92CC5 /* TextFieldRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E140D2140E14700D92CC5 /* TextFieldRowView.swift */; };
@@ -55,7 +54,6 @@
 		02015E06DE892599BDAD71A0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		38CD0C5D28157AF8325FCCC4 /* Pods-AstroForms_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroForms_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroForms_Tests/Pods-AstroForms_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		42569D7CB07D2BBB4BE97051 /* Pods_AstroForms_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstroForms_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		494E13B9213F677600D92CC5 /* PlainKitchenSinkForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainKitchenSinkForm.swift; sourceTree = "<group>"; };
 		494E140B2140E14700D92CC5 /* TextFieldRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldRow.swift; sourceTree = "<group>"; };
 		494E140C2140E14700D92CC5 /* TextFieldRowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldRowView.xib; sourceTree = "<group>"; };
 		494E140D2140E14700D92CC5 /* TextFieldRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldRowView.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 		494E13B8213F676800D92CC5 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
-				494E13B9213F677600D92CC5 /* PlainKitchenSinkForm.swift */,
 				49B177032158B22600EEEECA /* LoginForm.swift */,
 			);
 			path = Forms;
@@ -538,7 +535,6 @@
 				49B177092158B55200EEEECA /* HeroView.swift in Sources */,
 				494E14102140E14700D92CC5 /* TextFieldRowView.swift in Sources */,
 				494E14132142716900D92CC5 /* TextViewRow.swift in Sources */,
-				494E13BA213F677600D92CC5 /* PlainKitchenSinkForm.swift in Sources */,
 				494E14292145370B00D92CC5 /* ButtonRow.swift in Sources */,
 				49B177042158B22600EEEECA /* LoginForm.swift in Sources */,
 				494E142021433F8000D92CC5 /* SwitchRow.swift in Sources */,
