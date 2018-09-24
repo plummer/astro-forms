@@ -64,7 +64,7 @@ class LoginForm: Form {
             $0.view.button.isEnabled = false
             $0.view.button.backgroundColor = .lightGray
             $0.buttonTapBlock = self.submit
-            $0.title = "Submit"
+            $0.title = "Login"
         }
         
         emailRow.focusRect = {

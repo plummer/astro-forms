@@ -12,11 +12,14 @@ Astro Forms is not yet ready to be used in any context, the first beta will be r
 
 #### Base implementation
 
+x Complete
+~ In progress
+
 - [x] Stackview / form rendering
 - [x] Form submission
-- [ ] Validation
-- [ ] Accessibility ([WCAG 2.0 AA](https://www.w3.org/TR/mobile-accessibility-mapping))
-- [ ] Documentation
+- [x] Validation
+- [~] Accessibility ([WCAG 2.0 AA](https://www.w3.org/TR/mobile-accessibility-mapping))
+- [~] Documentation
 - [ ] Localization
 
 #### Included Row Examples
@@ -25,13 +28,13 @@ Astro Forms is not yet ready to be used in any context, the first beta will be r
 - [x] Textview
 - [x] Checkbox / switch
 - [ ] Multi checkbox
-- [ ] Multi Select Row
+- [ ] Multi-select Row
 - [ ] Radio
 - [ ] Multi radio
-- [ ] Push row (select)
-- [ ] Picker row
-- [ ] Date picker row
-- [ ] Segmented control row
-- [ ] Button row
-- [ ] Decorative row
-- [ ] Astro theme
+- [ ] Push (select)
+- [ ] Picker
+- [ ] Date picker
+- [ ] Segmented control
+- [x] Button
+- [x] Custom view
+- [~] Astro theme
