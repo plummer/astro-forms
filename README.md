@@ -12,9 +12,6 @@ Astro Forms is not yet ready to be used in any context, the first beta will be r
 
 #### Base implementation
 
-x Complete
-~ In progress
-
 - [x] Stackview / form rendering
 - [x] Form submission
 - [x] Validation
