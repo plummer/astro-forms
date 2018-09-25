@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf1-PH-wOG">
-                    <rect key="frame" x="20" y="15" width="335" height="632"/>
+                    <rect key="frame" x="20" y="20" width="335" height="627"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="voY-mL-ZTB"/>
@@ -41,7 +41,7 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pf1-PH-wOG" secondAttribute="trailing" constant="20" id="QOT-e9-jCQ"/>
                 <constraint firstItem="pf1-PH-wOG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="iQr-Wq-67E"/>
-                <constraint firstItem="pf1-PH-wOG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="pue-AO-YW4"/>
+                <constraint firstItem="pf1-PH-wOG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="pue-AO-YW4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pf1-PH-wOG" secondAttribute="bottom" constant="20" id="z78-us-4Ua"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
