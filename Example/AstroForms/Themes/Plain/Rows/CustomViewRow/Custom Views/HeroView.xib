@@ -16,28 +16,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astro Forms" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHW-rN-a4W">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Astro Hero" translatesAutoresizingMaskIntoConstraints="NO" id="N1o-TP-SoH">
+                    <rect key="frame" x="20" y="40" width="335" height="607"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="8gB-dP-c80"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="C8Z-Ow-Bsj"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="312" id="LWc-MM-iqq"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="255" id="taB-I3-Xce"/>
                     </constraints>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UHW-rN-a4W" secondAttribute="trailing" id="cjH-Ob-Y4J"/>
-                <constraint firstItem="UHW-rN-a4W" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="esV-MZ-vbD"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UHW-rN-a4W" secondAttribute="bottom" id="jdR-Qx-zdM"/>
-                <constraint firstItem="UHW-rN-a4W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="n1X-dO-2wL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="N1o-TP-SoH" secondAttribute="trailing" constant="20" id="5Ni-h7-83M"/>
+                <constraint firstItem="N1o-TP-SoH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="BUy-Vi-Mx5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="N1o-TP-SoH" secondAttribute="bottom" constant="20" id="ZuJ-Q1-p1U"/>
+                <constraint firstItem="N1o-TP-SoH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="ikW-dL-J4v"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="label" destination="UHW-rN-a4W" id="bAe-qV-tKx"/>
+                <outlet property="imageView" destination="N1o-TP-SoH" id="D2N-j2-H9S"/>
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="Astro Hero" width="312" height="255"/>
+    </resources>
 </document>

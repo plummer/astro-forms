@@ -14,7 +14,7 @@ class TextFieldRowView: UIView,
     UITextFieldDelegate,
     DefaultKeyboardToolbarDelegate {
     
-    @IBOutlet var textField: UITextField!
+    @IBOutlet var textField: AstroTextField!
     
     @IBOutlet var label: UILabel!
     

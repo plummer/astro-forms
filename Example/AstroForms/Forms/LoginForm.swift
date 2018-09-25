@@ -44,19 +44,18 @@ class LoginForm: Form {
     
     func setupForm() {
         
-        let heroRow = CustomViewRow<HeroView>(tag: LoginFormTag.hero) {
-            $0.view.label.text = "Astro Forms\nPlain Login Example"
-        }
+        let heroRow = CustomViewRow<HeroView>(tag: LoginFormTag.hero)
         
         let emailRow = TextFieldRow(tag: LoginFormTag.email) {
             $0.view.label.text = "Email"
             $0.view.textField.placeholder = "example@astroforms.com"
             $0.view.textField.keyboardType = .emailAddress
+            $0.view.textField.autocorrectionType = UITextAutocorrectionType.no
         }
         
         let passwordRow = TextFieldRow(tag: LoginFormTag.password) {
             $0.view.label.text = "Password"
-            $0.view.textField.placeholder = "******"
+            $0.view.textField.placeholder = "••••••"
             $0.view.textField.isSecureTextEntry = true
         }
         

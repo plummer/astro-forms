@@ -11,6 +11,6 @@ import UIKit
 
 class HeroView: UIView {
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
 }

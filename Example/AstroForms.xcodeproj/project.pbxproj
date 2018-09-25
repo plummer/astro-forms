@@ -23,6 +23,7 @@
 		49B177042158B22600EEEECA /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B177032158B22600EEEECA /* LoginForm.swift */; };
 		49B177072158B50900EEEECA /* HeroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B177062158B50900EEEECA /* HeroView.xib */; };
 		49B177092158B55200EEEECA /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B177082158B55200EEEECA /* HeroView.swift */; };
+		49C44F302159D8280041AA0B /* AstroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C44F2F2159D8280041AA0B /* AstroTextField.swift */; };
 		49CAB52F215730B400C5CD8B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CAB52E215730B400C5CD8B /* ErrorView.swift */; };
 		49CAB531215730BF00C5CD8B /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CAB530215730BF00C5CD8B /* ErrorView.xib */; };
 		49D6BF482148B9B8000E422D /* CheckListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6BF472148B9B8000E422D /* CheckListRow.swift */; };
@@ -70,6 +71,7 @@
 		49B177032158B22600EEEECA /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		49B177062158B50900EEEECA /* HeroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroView.xib; sourceTree = "<group>"; };
 		49B177082158B55200EEEECA /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
+		49C44F2F2159D8280041AA0B /* AstroTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroTextField.swift; sourceTree = "<group>"; };
 		49CAB52E215730B400C5CD8B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		49CAB530215730BF00C5CD8B /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		49D6BF472148B9B8000E422D /* CheckListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListRow.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				494E140B2140E14700D92CC5 /* TextFieldRow.swift */,
 				494E140D2140E14700D92CC5 /* TextFieldRowView.swift */,
 				494E140C2140E14700D92CC5 /* TextFieldRowView.xib */,
+				49C44F2F2159D8280041AA0B /* AstroTextField.swift */,
 			);
 			path = TextFieldRow;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				49D6BF482148B9B8000E422D /* CheckListRow.swift in Sources */,
 				494E14152142717500D92CC5 /* TextViewRowView.swift in Sources */,
+				49C44F302159D8280041AA0B /* AstroTextField.swift in Sources */,
 				49B177002158AFCB00EEEECA /* CustomNibRow.swift in Sources */,
 				49CAB52F215730B400C5CD8B /* ErrorView.swift in Sources */,
 				494E142B2145371400D92CC5 /* ButtonRowView.swift in Sources */,
