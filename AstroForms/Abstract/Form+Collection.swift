@@ -25,7 +25,10 @@ extension Form {
     public func add(_ row: AnyRow) {
         
         rows.append(row)
+        
         stackView.addArrangedSubview(stackWrapped(row.baseView))
+        
+        (row.baseView as? ThemeableView)?.updateTheme()
         
     }
     

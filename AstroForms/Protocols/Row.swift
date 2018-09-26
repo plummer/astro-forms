@@ -176,6 +176,12 @@ public extension Row {
             
             config?(view)
             
+            if let _view = (view as? ThemeableView) {
+                _view.updateTheme()
+            }
+            
+            //(view as? ThemeableView)?.updateTheme()
+            
             UIView.animate(withDuration: 0.1, delay: 0.2, options: [], animations: {
                 view.alpha = 1
             })
