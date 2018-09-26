@@ -11,7 +11,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    let theme: AstroTheme = AstroTheme.normal
+    let theme: AstroTheme = AstroTheme.light
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
         
         loginForm.theme = theme
         backgroundImageView.theme = theme
-
         
     }
     
