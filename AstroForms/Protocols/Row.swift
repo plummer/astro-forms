@@ -204,7 +204,7 @@ public extension Row {
                 ? topStackView.arrangedSubviews.last
                 : nil
         
-        if let _lastViewOfDifferentType = lastViewOfDifferentType {
+        if lastViewOfDifferentType != nil {
             
             hideHelper(animated: animated) {
                 animateAndConfigureNewView(animated: animated)
