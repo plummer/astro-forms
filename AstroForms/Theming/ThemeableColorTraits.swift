@@ -16,11 +16,3 @@ public protocol ThemeableColorTraits {
     func color(_ requirement: ThemeColorType) -> UIColor
     
 }
-
-public protocol ThemeableImageTraits {
-    
-    associatedtype ThemeImageType
-    
-    func image(_ requirement: ThemeImageType) -> UIImage
-    
-}
