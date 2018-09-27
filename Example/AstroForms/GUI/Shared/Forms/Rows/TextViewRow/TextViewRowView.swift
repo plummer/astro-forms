@@ -36,12 +36,28 @@ class TextViewRowView: UIView,
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.backgroundColor = color(.inputHighlightedBackground)
+        
+        UIView.animate(
+            withDuration: 0.6,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 0.3, options: [], animations: {
+                
+                textView.transform = CGAffineTransform(scaleX: 1.03, y: 1.03)
+                
+        }, completion: nil)
         
         row?.valueDidStartEditing()
         
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
+        textView.backgroundColor = color(.inputBackground)
+        
+        UIView.animate(withDuration: 0.2) {
+            textView.transform = CGAffineTransform(scaleX: 1.00, y: 1.00)
+        }
         
         row?.valueDidEndEditing()
         
