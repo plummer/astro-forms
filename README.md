@@ -4,33 +4,88 @@
 
 [![Astro Forms is an approachable iOS forms framework for building beautiful, reusable and easy to maintain forms. Type Safe Row Access, Validation, Manage Multiple Themes, Custom Focus Rects, Keyboard Management](https://github.com/plummer/astro-docs/blob/master/assets/main-repo-readme-header.jpg)](https://www.astroforms.com)
 
-## Development Status
+## Getting Started
 
-Astro Forms is not yet ready to be used in any context, the first beta will be ready ~ October 2018.
+For a getting started guide, reference docs and a info on the included forms, head to the [documentation](https://www.astroforms.com). 
 
-### 0.1.0
+Want to dive right in?
 
-#### Base implementation
+`pod install 'AstroForms'`
 
-- [x] Stackview / form rendering
-- [x] Form submission
-- [x] Validation
-- [ ] Accessibility ([WCAG 2.0 AA](https://www.w3.org/TR/mobile-accessibility-mapping))
-- [ ] Documentation
-- [x] Theming
+## What is Astro Forms?
 
-#### Included Row Examples
+Astro Forms is a framework that provides the structure to build your own highly custom and reusable forms for a project. In this way it's different to other frameworks - it's specifically _not_ a drop in set of subclassable elements or abstraction around UIKit. Instead, it's a set of protocols and a minimum of abstract classes you compose to build _your_ forms.
 
-- [x] Textfield
-- [x] Textview
-- [x] Checkbox / switch
-- [ ] Multi checkbox
-- [ ] Multi-select Row
-- [ ] Radio
-- [ ] Multi radio
-- [ ] Push (select)
-- [ ] Picker
-- [ ] Date picker
-- [ ] Segmented control
-- [x] Button
-- [x] Custom view
+### Talk straight - what is a `Form`?
+
+It's a `UIView` subclass that contains a single `UIStackView` - it controls rendering, show/hide, validation and all the other form like features you might need.
+
+### ... and a `Row`?
+
+It's a class that conforms to various `Row` protocols (`ValueRow`, `FocusableRow`...), for the behaviours you need, plus a plain old `UIView` and a Nib.
+
+## Examples
+
+For a getting started guide, reference docs and a info on the included forms, head to the [documentation](https://www.astroforms.com). 
+
+As a basic overview however to give you an idea of what it's like to use Astro Forms:
+
+### Rendering a row
+
+Rendering a rows is a simple as configuring it's view, and 
+
+```swift
+let emailRow = TextFieldRow(tag: LoginFormTag.email) {
+  $0.view.label.text = "Email"
+  $0.view.textField.placeholder = "example@astroforms.com"
+  $0.view.textField.keyboardType = .emailAddress
+  $0.view.textField.autocorrectionType = UITextAutocorrectionType.no
+}
+
+// inside a Form subclass
+add(emailRow)
+```
+You can see the implementation for this row [here](https://github.com/plummer/astro-forms/tree/master/Example/AstroForms/GUI/Shared/Forms/Rows/TextFieldRow).
+
+### Finding a row
+
+Finding a row is easy and type safe:
+
+```swift
+let emailRow: TextFieldRow? = findRow(tag: LoginFormTag.email)
+```
+
+The value is typed for every row too:
+
+```swift
+let stringValue = emailRow?.value
+```
+
+`RowTag` implementations can have associated values, so dynamic row rendering and access is easy too:
+
+```swift
+let addressLine4Row: TextFieldRow? = findRow(tag: LoginFormTag.custom("address-line-4"))
+```
+
+### Validating a row
+
+Forms can validate rows with a convenience block-chaining syntax:
+
+```swift
+let isValid: Bool = validate(
+	row: emailRow,
+	{ $0.count > 0 } // The rows typed value (String) is passed into each validation block
+	{ $0.contains "@" }
+)
+```
+
+A build in factory provides validation methods that can be extended for reusability. For example, instead of the (hilariously poor) email validation above, `ValidationRule.email` isEmail is built in. This can be mixed with inline rules.
+
+
+```swift
+let isValid: Bool = validate(
+	row: emailRow,
+	{ $0.count > 0 } // The rows typed valued is passed into each validation block
+	ValidationRule.isEmail
+)
+```
