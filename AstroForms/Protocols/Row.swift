@@ -156,32 +156,26 @@ public extension Row {
         func animateAndConfigureNewView(animated: Bool) {
             
             // Add the view if it doesn't exist
-            let viewExists = topStackView.arrangedSubviews.count <= 1
+            let viewExists = topStackView.arrangedSubviews.count > 1
+
+            config?(view)
             
-            if viewExists {
+            if !viewExists {
                 topStackView.addArrangedSubview(view)
             } else {
                 view.isHidden = false
                 view.alpha = 1
-                config?(view)
                 return
             }
+            
+            (view as? ThemeableView)?.updateTheme()
             
             guard animated else {
                 view.isHidden = false
                 view.alpha = 1
-                config?(view)
                 return
             }
-            
-            config?(view)
-            
-            if let _view = (view as? ThemeableView) {
-                _view.updateTheme()
-            }
-            
-            //(view as? ThemeableView)?.updateTheme()
-            
+
             UIView.animate(withDuration: 0.1, delay: 0.2, options: [], animations: {
                 view.alpha = 1
             })

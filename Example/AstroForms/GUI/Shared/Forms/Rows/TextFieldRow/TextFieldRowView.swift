@@ -57,9 +57,15 @@ class TextFieldRowView: UIView,
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.backgroundColor = color(.inputHighlightedBackground)
         
-        UIView.animate(withDuration: 0.1) {
-           textField.transform = CGAffineTransform.init(scaleX: 1.02, y: 1.02)
-        }
+        UIView.animate(
+            withDuration: 0.6,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 0.3, options: [], animations: {
+                
+               textField.transform = CGAffineTransform(scaleX: 1.03, y: 1.03)
+                
+        }, completion: nil)
         
         row?.valueDidStartEditing()
         
@@ -68,8 +74,8 @@ class TextFieldRowView: UIView,
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.backgroundColor = color(.inputBackground)
         
-        UIView.animate(withDuration: 0.1) {
-            textField.transform = CGAffineTransform.init(scaleX: 1.00, y: 1.00)
+        UIView.animate(withDuration: 0.2) {
+            textField.transform = CGAffineTransform(scaleX: 1.00, y: 1.00)
         }
         
         row?.valueDidEndEditing()

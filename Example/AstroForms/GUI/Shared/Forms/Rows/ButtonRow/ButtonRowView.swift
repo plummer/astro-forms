@@ -33,10 +33,10 @@ class ButtonRowView: UIView, Themeable {
     
     @objc func buttonTouchDown() {
         
-        UIView.animate(withDuration: 0.1) {[weak self] in
+        UIView.animate(withDuration: 0.2) {[weak self] in
             guard let strongSelf = self else { return }
             strongSelf.button.transform = CGAffineTransform.init(
-                scaleX: 1.02, y: 1.02
+                scaleX: 1.03, y: 1.03
             )
         }
         
@@ -44,7 +44,7 @@ class ButtonRowView: UIView, Themeable {
     
     @objc func buttonTouchUp() {
         
-        UIView.animate(withDuration: 0.1) {[weak self] in
+        UIView.animate(withDuration: 0.2) {[weak self] in
             guard let strongSelf = self else { return }
             strongSelf.button.transform = CGAffineTransform.init(
                 scaleX: 1.00, y: 1.00

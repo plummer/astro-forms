@@ -1,5 +1,5 @@
 //
-//  ExampleFieldsViewController.swift
+//  AdditionalInfoViewController.swift
 //  AstroForms_Example
 //
 //  Created by Andrew Plummer on 26/9/18.
@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class ExampleFieldsViewController: UIViewController {
+class AdditionalInfoViewController: UIViewController {
     
-    @IBOutlet weak var exampleFieldsForm: ExampleFieldsForm!
+    @IBOutlet weak var exampleFieldsForm: AdditionalInfoForm!
     
     var loginFormData: LoginFormData?
     

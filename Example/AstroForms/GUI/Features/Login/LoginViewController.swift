@@ -42,7 +42,7 @@ class LoginViewController: UIViewController, LoginFormDelegate {
             
             guard
                 let formData = sender as? LoginFormData,
-                let dest = segue.destination as? ExampleFieldsViewController
+                let dest = segue.destination as? AdditionalInfoViewController
             else {
                 return
             }

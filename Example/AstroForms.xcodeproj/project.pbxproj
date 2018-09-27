@@ -30,18 +30,18 @@
 		4957F670215A1F3800384049 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F656215A1F3800384049 /* ErrorView.swift */; };
 		4957F671215A1F3800384049 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F658215A1F3800384049 /* HintView.swift */; };
 		4957F672215A1F3800384049 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4957F659215A1F3800384049 /* HintView.xib */; };
-		4957F673215A1F3800384049 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F65B215A1F3800384049 /* LoginForm.swift */; };
 		4957F677215A1FB100384049 /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F676215A1FB100384049 /* Themeable.swift */; };
 		4957F67B215A1FF000384049 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F67A215A1FF000384049 /* Theme.swift */; };
 		4957F67D215A204500384049 /* AstroThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F67C215A204500384049 /* AstroThemeColor.swift */; };
 		4957F680215A2E5000384049 /* UIImage+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F67F215A2E5000384049 /* UIImage+UIColor.swift */; };
-		4957F68C215B14CF00384049 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F68B215B14CF00384049 /* LoginViewController.swift */; };
 		4957F68E215B167D00384049 /* AstroThemeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F68D215B167D00384049 /* AstroThemeImage.swift */; };
 		4957F692215B1B6300384049 /* ThemeableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F691215B1B6300384049 /* ThemeableImageView.swift */; };
 		4957F694215B273F00384049 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F693215B273F00384049 /* CustomView.swift */; };
-		4957F698215B4F6000384049 /* BackgroundContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F697215B4F6000384049 /* BackgroundContainerViewController.swift */; };
-		4957F69B215B5F7A00384049 /* ExampleFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F69A215B5F7A00384049 /* ExampleFieldsViewController.swift */; };
-		4957F69D215B5F8700384049 /* ExampleFieldsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F69C215B5F8700384049 /* ExampleFieldsForm.swift */; };
+		4957F6A8215C5A3B00384049 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6A3215C5A3B00384049 /* LoginViewController.swift */; };
+		4957F6A9215C5A3B00384049 /* BackgroundContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6A4215C5A3B00384049 /* BackgroundContainerViewController.swift */; };
+		4957F6AA215C5A3B00384049 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6A5215C5A3B00384049 /* LoginForm.swift */; };
+		4957F6AE215C5A5900384049 /* AdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6AC215C5A5900384049 /* AdditionalInfoViewController.swift */; };
+		4957F6AF215C5A5900384049 /* AdditionalInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6AD215C5A5900384049 /* AdditionalInfoForm.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -88,18 +88,18 @@
 		4957F656215A1F3800384049 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4957F658215A1F3800384049 /* HintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		4957F659215A1F3800384049 /* HintView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
-		4957F65B215A1F3800384049 /* LoginForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		4957F676215A1FB100384049 /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
 		4957F67A215A1FF000384049 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4957F67C215A204500384049 /* AstroThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroThemeColor.swift; sourceTree = "<group>"; };
 		4957F67F215A2E5000384049 /* UIImage+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+UIColor.swift"; sourceTree = "<group>"; };
-		4957F68B215B14CF00384049 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4957F68D215B167D00384049 /* AstroThemeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroThemeImage.swift; sourceTree = "<group>"; };
 		4957F691215B1B6300384049 /* ThemeableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeableImageView.swift; sourceTree = "<group>"; };
 		4957F693215B273F00384049 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
-		4957F697215B4F6000384049 /* BackgroundContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundContainerViewController.swift; sourceTree = "<group>"; };
-		4957F69A215B5F7A00384049 /* ExampleFieldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleFieldsViewController.swift; sourceTree = "<group>"; };
-		4957F69C215B5F8700384049 /* ExampleFieldsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleFieldsForm.swift; sourceTree = "<group>"; };
+		4957F6A3215C5A3B00384049 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4957F6A4215C5A3B00384049 /* BackgroundContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundContainerViewController.swift; sourceTree = "<group>"; };
+		4957F6A5215C5A3B00384049 /* LoginForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
+		4957F6AC215C5A5900384049 /* AdditionalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewController.swift; sourceTree = "<group>"; };
+		4957F6AD215C5A5900384049 /* AdditionalInfoForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalInfoForm.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AstroForms_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroForms_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,9 +140,8 @@
 		4957F634215A1F3800384049 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				4957F699215B5F6F00384049 /* Example Fields */,
+				4957F69E215C5A3B00384049 /* Features */,
 				4957F635215A1F3800384049 /* Shared */,
-				4957F65A215A1F3800384049 /* Login */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -285,16 +284,6 @@
 			path = HintView;
 			sourceTree = "<group>";
 		};
-		4957F65A215A1F3800384049 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				4957F65B215A1F3800384049 /* LoginForm.swift */,
-				4957F68B215B14CF00384049 /* LoginViewController.swift */,
-				4957F697215B4F6000384049 /* BackgroundContainerViewController.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		4957F674215A1F9A00384049 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,13 +319,32 @@
 			path = ThemeableImageView;
 			sourceTree = "<group>";
 		};
-		4957F699215B5F6F00384049 /* Example Fields */ = {
+		4957F69E215C5A3B00384049 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				4957F69A215B5F7A00384049 /* ExampleFieldsViewController.swift */,
-				4957F69C215B5F8700384049 /* ExampleFieldsForm.swift */,
+				4957F6AB215C5A5900384049 /* Additional Info */,
+				4957F6A2215C5A3B00384049 /* Login */,
 			);
-			path = "Example Fields";
+			path = Features;
+			sourceTree = "<group>";
+		};
+		4957F6A2215C5A3B00384049 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4957F6A3215C5A3B00384049 /* LoginViewController.swift */,
+				4957F6A4215C5A3B00384049 /* BackgroundContainerViewController.swift */,
+				4957F6A5215C5A3B00384049 /* LoginForm.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4957F6AB215C5A5900384049 /* Additional Info */ = {
+			isa = PBXGroup;
+			children = (
+				4957F6AC215C5A5900384049 /* AdditionalInfoViewController.swift */,
+				4957F6AD215C5A5900384049 /* AdditionalInfoForm.swift */,
+			);
+			path = "Additional Info";
 			sourceTree = "<group>";
 		};
 		508CB67FC6A1509675A5829B /* Frameworks */ = {
@@ -615,17 +623,16 @@
 				4957F66A215A1F3800384049 /* TextViewRow.swift in Sources */,
 				4957F663215A1F3800384049 /* CustomNibRow.swift in Sources */,
 				4957F665215A1F3800384049 /* HeroView.swift in Sources */,
+				4957F6AF215C5A5900384049 /* AdditionalInfoForm.swift in Sources */,
 				4957F667215A1F3800384049 /* SwitchRowView.swift in Sources */,
 				4957F66C215A1F3800384049 /* CheckListRowView.swift in Sources */,
+				4957F6A9215C5A3B00384049 /* BackgroundContainerViewController.swift in Sources */,
 				4957F67B215A1FF000384049 /* Theme.swift in Sources */,
-				4957F673215A1F3800384049 /* LoginForm.swift in Sources */,
-				4957F69B215B5F7A00384049 /* ExampleFieldsViewController.swift in Sources */,
 				4957F680215A2E5000384049 /* UIImage+UIColor.swift in Sources */,
 				4957F65E215A1F3800384049 /* TextFieldRow.swift in Sources */,
+				4957F6AA215C5A3B00384049 /* LoginForm.swift in Sources */,
 				4957F662215A1F3800384049 /* ButtonRow.swift in Sources */,
 				4957F68E215B167D00384049 /* AstroThemeImage.swift in Sources */,
-				4957F69D215B5F8700384049 /* ExampleFieldsForm.swift in Sources */,
-				4957F68C215B14CF00384049 /* LoginViewController.swift in Sources */,
 				4957F669215A1F3800384049 /* TextViewRowView.swift in Sources */,
 				4957F671215A1F3800384049 /* HintView.swift in Sources */,
 				4957F66D215A1F3800384049 /* CheckListRow.swift in Sources */,
@@ -633,12 +640,13 @@
 				4957F677215A1FB100384049 /* Themeable.swift in Sources */,
 				4957F692215B1B6300384049 /* ThemeableImageView.swift in Sources */,
 				4957F67D215A204500384049 /* AstroThemeColor.swift in Sources */,
-				4957F698215B4F6000384049 /* BackgroundContainerViewController.swift in Sources */,
 				4957F694215B273F00384049 /* CustomView.swift in Sources */,
 				4957F65C215A1F3800384049 /* AstroTextField.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				4957F660215A1F3800384049 /* ButtonRowView.swift in Sources */,
+				4957F6A8215C5A3B00384049 /* LoginViewController.swift in Sources */,
 				4957F670215A1F3800384049 /* ErrorView.swift in Sources */,
+				4957F6AE215C5A5900384049 /* AdditionalInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

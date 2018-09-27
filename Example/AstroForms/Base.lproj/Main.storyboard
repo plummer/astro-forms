@@ -85,15 +85,15 @@
             </objects>
             <point key="canvasLocation" x="530" y="26"/>
         </scene>
-        <!--Example Fields View Controller-->
+        <!--Additional Info View Controller-->
         <scene sceneID="bJK-ae-G2m">
             <objects>
-                <viewController id="tiL-95-scu" customClass="ExampleFieldsViewController" customModule="AstroForms_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tiL-95-scu" customClass="AdditionalInfoViewController" customModule="AstroForms_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eyD-AL-d0W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-1U-Noz" customClass="ExampleFieldsForm" customModule="AstroForms_Example" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-1U-Noz" customClass="AdditionalInfoForm" customModule="AstroForms_Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
