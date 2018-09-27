@@ -73,7 +73,7 @@ let addressLine4Row: TextFieldRow? = findRow(tag: LoginFormTag.custom("address-l
 
 ### Validating a row
 
-Forms can validate rows with a convenience block-chaining syntax:
+Forms can validate rows with a convenient block-chaining syntax:
 
 ```swift
 let isValid: Bool = validate(
@@ -83,7 +83,7 @@ let isValid: Bool = validate(
 )
 ```
 
-A build in factory provides validation methods that can be extended for reusability. For example, instead of the (hilariously poor) email validation above, `ValidationRule.email` isEmail is built in. This can be mixed with inline rules.
+A build in factory provides validation methods that can be extended for reusability. For example, instead of the (hilariously poor) email validation above, `ValidationRule.isEmail` is built in. This can be mixed with inline rules.
 
 
 ```swift
