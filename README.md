@@ -83,7 +83,7 @@ let isValid: Bool = validate(
 )
 ```
 
-A build in factory provides validation methods that can be extended for reusability. For example, instead of the (hilariously poor) email validation above, `ValidationRule.isEmail` is built in. This can be mixed with inline rules.
+A built in factory `ValidationRule` provides validation methods that can be extended for reusability. For example, instead of the (hilariously poor) email validation above, `ValidationRule.isEmail` is built in. This can be mixed with inline rules.
 
 
 ```swift
