@@ -10,7 +10,9 @@ For a getting started guide, reference docs and a info on the included forms, he
 
 Want to dive right in?
 
-`pod install 'AstroForms'`
+```ruby
+pod install 'AstroForms'
+```
 
 ## What is Astro Forms?
 
@@ -22,17 +24,19 @@ It's a `UIView` subclass that contains a single `UIStackView` - it controls rend
 
 ### ... and a `Row`?
 
-It's a class that conforms to various `Row` protocols (`ValueRow`, `FocusableRow`...), for the behaviours you need, plus a plain old `UIView` and a Nib.
+It's a class that conforms to various `Row` protocols (`ValueRow`, `FocusableRow`...) so it can interact with it's `Form`, plus a plain old `UIView` and a Nib.
 
 ## Examples
 
 For a getting started guide, reference docs and a info on the included forms, head to the [documentation](https://www.astroforms.com). 
 
+If you'd prefer to read the code, here's an [example login form](https://github.com/plummer/astro-forms/blob/master/Example/AstroForms/GUI/Features/Login/LoginForm.swift) and [text field row](https://github.com/plummer/astro-forms/tree/master/Example/AstroForms/GUI/Shared/Forms/Rows/TextFieldRow).
+
 As a basic overview however to give you an idea of what it's like to use Astro Forms:
 
 ### Rendering a row
 
-Rendering a rows is a simple as configuring it's view, and 
+Rendering a row is as simple as giving it a tag and configuring it's view:
 
 ```swift
 let emailRow = TextFieldRow(tag: LoginFormTag.email) {
