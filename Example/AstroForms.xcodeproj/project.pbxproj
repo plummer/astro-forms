@@ -42,6 +42,8 @@
 		4957F6AA215C5A3B00384049 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6A5215C5A3B00384049 /* LoginForm.swift */; };
 		4957F6AE215C5A5900384049 /* AdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6AC215C5A5900384049 /* AdditionalInfoViewController.swift */; };
 		4957F6AF215C5A5900384049 /* AdditionalInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6AD215C5A5900384049 /* AdditionalInfoForm.swift */; };
+		4957F6B2215C739C00384049 /* SlideAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6B1215C739C00384049 /* SlideAnimatedTransition.swift */; };
+		4957F6B5215C786400384049 /* SlideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6B4215C786400384049 /* SlideNavigationController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -100,6 +102,8 @@
 		4957F6A5215C5A3B00384049 /* LoginForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		4957F6AC215C5A5900384049 /* AdditionalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewController.swift; sourceTree = "<group>"; };
 		4957F6AD215C5A5900384049 /* AdditionalInfoForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalInfoForm.swift; sourceTree = "<group>"; };
+		4957F6B1215C739C00384049 /* SlideAnimatedTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideAnimatedTransition.swift; sourceTree = "<group>"; };
+		4957F6B4215C786400384049 /* SlideNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideNavigationController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AstroForms_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroForms_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 		4957F635215A1F3800384049 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4957F6B3215C785C00384049 /* Controllers */,
+				4957F6B0215C70A400384049 /* Transitions */,
 				4957F68F215B1B5A00384049 /* Views */,
 				4957F67E215A2E4800384049 /* Extensions */,
 				4957F636215A1F3800384049 /* Forms */,
@@ -345,6 +351,22 @@
 				4957F6AD215C5A5900384049 /* AdditionalInfoForm.swift */,
 			);
 			path = "Additional Info";
+			sourceTree = "<group>";
+		};
+		4957F6B0215C70A400384049 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				4957F6B1215C739C00384049 /* SlideAnimatedTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		4957F6B3215C785C00384049 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4957F6B4215C786400384049 /* SlideNavigationController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		508CB67FC6A1509675A5829B /* Frameworks */ = {
@@ -624,6 +646,7 @@
 				4957F663215A1F3800384049 /* CustomNibRow.swift in Sources */,
 				4957F665215A1F3800384049 /* HeroView.swift in Sources */,
 				4957F6AF215C5A5900384049 /* AdditionalInfoForm.swift in Sources */,
+				4957F6B5215C786400384049 /* SlideNavigationController.swift in Sources */,
 				4957F667215A1F3800384049 /* SwitchRowView.swift in Sources */,
 				4957F66C215A1F3800384049 /* CheckListRowView.swift in Sources */,
 				4957F6A9215C5A3B00384049 /* BackgroundContainerViewController.swift in Sources */,
@@ -641,6 +664,7 @@
 				4957F692215B1B6300384049 /* ThemeableImageView.swift in Sources */,
 				4957F67D215A204500384049 /* AstroThemeColor.swift in Sources */,
 				4957F694215B273F00384049 /* CustomView.swift in Sources */,
+				4957F6B2215C739C00384049 /* SlideAnimatedTransition.swift in Sources */,
 				4957F65C215A1F3800384049 /* AstroTextField.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				4957F660215A1F3800384049 /* ButtonRowView.swift in Sources */,

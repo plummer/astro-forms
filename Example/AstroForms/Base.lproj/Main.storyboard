@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="26"/>
+            <point key="canvasLocation" x="580" y="26"/>
         </scene>
         <!--Additional Info View Controller-->
         <scene sceneID="bJK-ae-G2m">
@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="1294" y="26"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Slide Navigation Controller-->
         <scene sceneID="dsy-hc-pO7">
             <objects>
-                <navigationController navigationBarHidden="YES" id="sEt-1O-ZO9" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="sEt-1O-ZO9" customClass="SlideNavigationController" customModule="AstroForms_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uFT-1c-vte">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
