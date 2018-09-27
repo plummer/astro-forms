@@ -6,7 +6,7 @@ An approachable iOS forms framework for building beautiful, reusable and easy to
 
 ## Development Status
 
-Astro Forms is not yet ready to be used in any context, the first beta will be ready ~ November 2018.
+Astro Forms is not yet ready to be used in any context, the first beta will be ready ~ October 2018.
 
 ### 0.1.0
 
@@ -17,7 +17,7 @@ Astro Forms is not yet ready to be used in any context, the first beta will be r
 - [x] Validation
 - [ ] Accessibility ([WCAG 2.0 AA](https://www.w3.org/TR/mobile-accessibility-mapping))
 - [ ] Documentation
-- [ ] Localization
+- [x] Themeing
 
 #### Included Row Examples
 
@@ -34,4 +34,3 @@ Astro Forms is not yet ready to be used in any context, the first beta will be r
 - [ ] Segmented control
 - [x] Button
 - [x] Custom view
-- [ ] Astro theme

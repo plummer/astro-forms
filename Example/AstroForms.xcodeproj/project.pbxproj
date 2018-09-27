@@ -46,7 +46,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* ValidationTests.swift */; };
 		A362E7F8A7E78F93BA8EB226 /* Pods_AstroForms_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04258FF8881DC3B478AB2FD /* Pods_AstroForms_Example.framework */; };
 		BDC3041B04E1B3C9F740DBFA /* Pods_AstroForms_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42569D7CB07D2BBB4BE97051 /* Pods_AstroForms_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -108,7 +108,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* AstroForms_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroForms_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
 		8945382C20E1B85BA8BE30A4 /* Pods-AstroForms_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroForms_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroForms_Example/Pods-AstroForms_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		89765BCFA49D26C3F3A847DA /* Pods-AstroForms_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroForms_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroForms_Tests/Pods-AstroForms_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		96F4D58133A934212B12E3A6 /* Pods-AstroForms_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroForms_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroForms_Example/Pods-AstroForms_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -402,7 +402,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* ValidationTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -654,7 +654,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* ValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
