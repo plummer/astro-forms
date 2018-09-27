@@ -2,7 +2,7 @@
 
 [![Bitrise App Page](https://app.bitrise.io/app/11b5791a9dab5b3c/status.svg?token=jFpCmx9nwy200940OcGbqA&branch=master)](https://app.bitrise.io/app/11b5791a9dab5b3c) [![Astro Forms Documentation](https://github.com/plummer/astro-docs/blob/master/assets/docs-button.png)](https://www.astroforms.com)
 
-An approachable iOS forms framework for building beautiful, reusable and easy to maintain forms.
+[![Astro Forms is an approachable iOS forms framework for building beautiful, reusable and easy to maintain forms. Type Safe Row Access, Validation, Manage Multiple Themes, Custom Focus Rects, Keyboard Management](https://github.com/plummer/astro-docs/blob/master/assets/main-repo-readme-header.jpg)](https://www.astroforms.com)
 
 ## Development Status
 
