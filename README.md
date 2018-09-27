@@ -17,7 +17,7 @@ Astro Forms is not yet ready to be used in any context, the first beta will be r
 - [x] Validation
 - [ ] Accessibility ([WCAG 2.0 AA](https://www.w3.org/TR/mobile-accessibility-mapping))
 - [ ] Documentation
-- [x] Themeing
+- [x] Theming
 
 #### Included Row Examples
 
