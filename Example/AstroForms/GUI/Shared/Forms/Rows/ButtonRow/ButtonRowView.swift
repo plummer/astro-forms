@@ -70,6 +70,10 @@ class ButtonRowView: UIView, Themeable {
             for: .disabled
         )
         
+        button.setTitleColor(color(.buttonText), for: .normal)
+        
+        button.setTitleColor(color(.buttonDisabledText), for: .disabled)
+        
         backgroundColor = color(.primaryBackground)
 
     }

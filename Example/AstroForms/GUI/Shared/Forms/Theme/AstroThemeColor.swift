@@ -25,6 +25,8 @@ enum AstroThemeColor {
         buttonBackground,
         buttonDisabledBackground,
         buttonHighlightedBackground,
+        buttonText,
+        buttonDisabledText,
     
         // UITextField, UITextArea
         inputBackground,
@@ -69,6 +71,10 @@ extension Themeable {
                 
             case .buttonHighlightedBackground: return #colorLiteral(red: 0, green: 0.3920759949, blue: 0.8128569162, alpha: 1)
                 
+            case .buttonText: return .black
+                
+            case .buttonDisabledText: return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7514447774)
+                
             case .inputTextColor: return .black
                 
             case .inputLabelColor: return .black
@@ -100,6 +106,10 @@ extension Themeable {
             case .buttonDisabledBackground: return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
                 
             case .buttonHighlightedBackground: return #colorLiteral(red: 0, green: 0.3970302654, blue: 0.8231281726, alpha: 1)
+                
+            case .buttonText: return .black
+
+            case .buttonDisabledText: return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7514447774)
             
             case .inputTextColor: return .black
                 
@@ -133,6 +143,10 @@ extension Themeable {
                 
             case .buttonHighlightedBackground: return #colorLiteral(red: 0.598350899, green: 0.1961166696, blue: 1, alpha: 1)
                 
+            case .buttonText: return .white
+                
+            case .buttonDisabledText: return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
+                
             case .inputTextColor: return .black
                 
             case .inputLabelColor: return .white
@@ -142,7 +156,7 @@ extension Themeable {
             case .hintTextColor: return .white
                 
             }
-            
+                
         }
         
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P8Y-9h-dZC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Background View Controller-->
+        <scene sceneID="Ne0-Ac-JJC">
+            <objects>
+                <viewController id="P8Y-9h-dZC" customClass="BackgroundViewController" customModule="AstroForms_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EWe-oP-xLy"/>
+                        <viewControllerLayoutGuide type="bottom" id="LdL-Ub-Upj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iDt-4T-gPn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q0V-g5-SrR" customClass="ThemeableImageView" customModule="AstroForms_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7h-H6-Po4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="sEt-1O-ZO9" kind="embed" id="j1p-l7-8QE"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LdL-Ub-Upj" firstAttribute="top" secondItem="c7h-H6-Po4" secondAttribute="bottom" id="3gm-o1-LXw"/>
+                            <constraint firstItem="Q0V-g5-SrR" firstAttribute="top" secondItem="iDt-4T-gPn" secondAttribute="top" id="EDU-yb-yBc"/>
+                            <constraint firstItem="c7h-H6-Po4" firstAttribute="leading" secondItem="iDt-4T-gPn" secondAttribute="leading" id="Ult-Jh-QzH"/>
+                            <constraint firstAttribute="trailing" secondItem="Q0V-g5-SrR" secondAttribute="trailing" id="WUL-cg-33T"/>
+                            <constraint firstAttribute="trailing" secondItem="c7h-H6-Po4" secondAttribute="trailing" id="eVR-Ss-wBS"/>
+                            <constraint firstAttribute="bottom" secondItem="Q0V-g5-SrR" secondAttribute="bottom" id="iwt-FY-kBZ"/>
+                            <constraint firstItem="Q0V-g5-SrR" firstAttribute="leading" secondItem="iDt-4T-gPn" secondAttribute="leading" id="n65-mt-40v"/>
+                            <constraint firstItem="c7h-H6-Po4" firstAttribute="top" secondItem="iDt-4T-gPn" secondAttribute="top" id="z4d-z9-apZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="Q0V-g5-SrR" id="kSy-2p-yWZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5m-mj-hRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-906" y="26"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -21,32 +63,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KXg-sF-3xV" customClass="ThemeableImageView" customModule="AstroForms_Example" customModuleProvider="target">
-                                <rect key="frame" x="-5" y="0.0" width="385" height="667"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ly-ms-KHR" customClass="LoginForm" customModule="AstroForms_Example" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="KXg-sF-3xV" secondAttribute="trailing" constant="-5" id="CDx-jf-yKO"/>
-                            <constraint firstItem="KXg-sF-3xV" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="MuJ-1O-OVl"/>
                             <constraint firstAttribute="trailing" secondItem="5Ly-ms-KHR" secondAttribute="trailing" id="N8i-KX-I38"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5Ly-ms-KHR" secondAttribute="bottom" constant="40" id="cWY-aw-mKd"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5Ly-ms-KHR" secondAttribute="bottom" id="cWY-aw-mKd"/>
                             <constraint firstItem="5Ly-ms-KHR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ddk-nw-saf"/>
-                            <constraint firstItem="KXg-sF-3xV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="-5" id="o64-Pi-APZ"/>
                             <constraint firstItem="5Ly-ms-KHR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="pT0-0H-X9D"/>
-                            <constraint firstAttribute="bottom" secondItem="KXg-sF-3xV" secondAttribute="bottom" id="ya3-8C-ACR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="EHK-vC-gsf"/>
                     <connections>
-                        <outlet property="backgroundImageView" destination="KXg-sF-3xV" id="IdE-mX-VPB"/>
                         <outlet property="loginForm" destination="5Ly-ms-KHR" id="auj-Vt-MBs"/>
+                        <segue destination="tiL-95-scu" kind="show" identifier="showExampleFields" id="anz-Tl-Paa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="530" y="26"/>
+        </scene>
+        <!--Example Fields View Controller-->
+        <scene sceneID="bJK-ae-G2m">
+            <objects>
+                <viewController id="tiL-95-scu" customClass="ExampleFieldsViewController" customModule="AstroForms_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eyD-AL-d0W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-1U-Noz" customClass="ExampleFieldsForm" customModule="AstroForms_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yzM-1U-Noz" secondAttribute="trailing" id="9m0-3A-YMY"/>
+                            <constraint firstAttribute="bottom" secondItem="yzM-1U-Noz" secondAttribute="bottom" id="CFK-Ko-NQq"/>
+                            <constraint firstItem="yzM-1U-Noz" firstAttribute="leading" secondItem="eyD-AL-d0W" secondAttribute="leading" id="MAR-vp-Hw9"/>
+                            <constraint firstItem="yzM-1U-Noz" firstAttribute="top" secondItem="eyD-AL-d0W" secondAttribute="top" id="UCh-xf-ZIi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="exampleFieldsForm" destination="yzM-1U-Noz" id="TrO-Ik-2lw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vjn-xS-xjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1294" y="26"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dsy-hc-pO7">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="sEt-1O-ZO9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uFT-1c-vte">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="5lR-ML-Ha2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D7h-qH-ZPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-199" y="26"/>
         </scene>
     </scenes>
 </document>

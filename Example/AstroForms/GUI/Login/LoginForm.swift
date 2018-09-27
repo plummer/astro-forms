@@ -9,9 +9,15 @@
 import Foundation
 import AstroForms
 
+protocol LoginFormDelegate: class {
+    func didSubmit(result: LoginFormData)
+}
+
 class LoginForm: Form, Themeable {
     
-    var theme: AstroTheme? = .normal {
+    weak var delegate: LoginFormDelegate?
+    
+    var theme: AstroTheme? = .light {
         didSet {
             updateTheme()
         }
@@ -45,6 +51,8 @@ class LoginForm: Form, Themeable {
             email: emailRow.value,
             password: passwordRow.value
         )
+        
+        delegate?.didSubmit(result: requestData)
         
     }
     

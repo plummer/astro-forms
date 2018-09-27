@@ -33,6 +33,7 @@ class TextFieldRowView: UIView,
             action: #selector(textFieldDidChange),
             for: .editingChanged
         )
+
     }
     
     func updateTheme() {

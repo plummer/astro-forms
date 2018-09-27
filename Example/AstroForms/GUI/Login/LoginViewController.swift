@@ -9,22 +9,47 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, LoginFormDelegate {
     
-    let theme: AstroTheme = AstroTheme.light
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    enum SegueKeys: String {
+        case showExampleFields
     }
     
-    @IBOutlet weak var backgroundImageView: ThemeableImageView!
+    var theme: AstroTheme = AstroTheme.light
+
     @IBOutlet weak var loginForm: LoginForm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginForm.theme = theme
-        backgroundImageView.theme = theme
+        loginForm.delegate = self
+        
+    }
+    
+    func didSubmit(result: LoginFormData) {
+        
+        performSegue(
+            withIdentifier: SegueKeys.showExampleFields.rawValue,
+            sender: result
+        )
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        if segue.identifier == SegueKeys.showExampleFields.rawValue {
+            
+            guard
+                let formData = sender as? LoginFormData,
+                let dest = segue.destination as? ExampleFieldsViewController
+            else {
+                return
+            }
+            
+            dest.loginFormData = formData
+            
+        }
         
     }
     
