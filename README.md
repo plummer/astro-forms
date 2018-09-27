@@ -6,7 +6,7 @@
 
 ## Getting Started
 
-For a getting started guide, reference docs and a info on the included forms, head to the [documentation](https://www.astroforms.com). 
+For a getting started guide, reference docs and included forms, head to the [documentation](https://www.astroforms.com). 
 
 Want to dive right in?
 
@@ -16,7 +16,7 @@ pod install 'AstroForms'
 
 ## What is Astro Forms?
 
-Astro Forms is a framework that provides the structure to build your own highly custom and reusable forms for a project. In this way it's different to other frameworks - it's specifically _not_ a drop in set of subclassable elements or abstraction around UIKit. Instead, it's a set of protocols and a minimum of abstract classes you compose to build _your_ forms.
+Astro Forms is a framework that provides the structure to build your own highly custom and reusable forms for a project. In this way it's different to other frameworks - it's specifically _not_ a drop in set of subclassable elements or abstraction around UIKit. Instead, it's a set of protocols and a minimum of abstract classes you compose to build _your_ forms. This is an opinionated way of doing things, however you'll have far less code (less 🐛s) and far more flexibility for anything but trivial stock-standard looking forms.
 
 ### Talk straight - what is a `Form`?
 
