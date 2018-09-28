@@ -89,7 +89,7 @@ A built in factory `ValidationRule` provides validation methods that can be exte
 ```swift
 let isValid: Bool = validate(
 	row: emailRow,
-	{ $0.count > 0 } // The rows typed valued is passed into each validation block
+	{ $0.count > 0 }, // The rows typed valued is passed into each validation block
 	ValidationRule.isEmail
 )
 ```

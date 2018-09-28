@@ -63,8 +63,6 @@ open class Form: UIView, RowDelegate, ValidatableForm {
         
     }
     
-    //
-    
     open func submit() {
         self.firstResponder?.resignFirstResponder()
     }

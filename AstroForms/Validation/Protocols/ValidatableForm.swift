@@ -1,5 +1,5 @@
 //
-//  ValidatableRow.swift
+//  ValidatableForm.swift
 //  AstroForms
 //
 //  Created by Andrew Plummer on 18/9/18.
