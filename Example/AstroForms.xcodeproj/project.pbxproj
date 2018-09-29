@@ -44,6 +44,8 @@
 		4957F6AF215C5A5900384049 /* AdditionalInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6AD215C5A5900384049 /* AdditionalInfoForm.swift */; };
 		4957F6B2215C739C00384049 /* SlideAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6B1215C739C00384049 /* SlideAnimatedTransition.swift */; };
 		4957F6B5215C786400384049 /* SlideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6B4215C786400384049 /* SlideNavigationController.swift */; };
+		4957F6B7215FF10A00384049 /* CheckListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6B6215FF10A00384049 /* CheckListRowItemView.swift */; };
+		4957F6B9215FF12B00384049 /* CheckListRowItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4957F6B8215FF12B00384049 /* CheckListRowItemView.xib */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -104,6 +106,8 @@
 		4957F6AD215C5A5900384049 /* AdditionalInfoForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalInfoForm.swift; sourceTree = "<group>"; };
 		4957F6B1215C739C00384049 /* SlideAnimatedTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideAnimatedTransition.swift; sourceTree = "<group>"; };
 		4957F6B4215C786400384049 /* SlideNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideNavigationController.swift; sourceTree = "<group>"; };
+		4957F6B6215FF10A00384049 /* CheckListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListRowItemView.swift; sourceTree = "<group>"; };
+		4957F6B8215FF12B00384049 /* CheckListRowItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListRowItemView.xib; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AstroForms_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroForms_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,8 +184,7 @@
 				4957F641215A1F3800384049 /* CustomViewRow */,
 				4957F646215A1F3800384049 /* SwitchRow */,
 				4957F64A215A1F3800384049 /* TextViewRow */,
-				4957F64E215A1F3800384049 /* ListRow */,
-				4957F652215A1F3800384049 /* CheckListRow */,
+				4957F64E215A1F3800384049 /* CheckListRow */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -246,19 +249,14 @@
 			path = TextViewRow;
 			sourceTree = "<group>";
 		};
-		4957F64E215A1F3800384049 /* ListRow */ = {
+		4957F64E215A1F3800384049 /* CheckListRow */ = {
 			isa = PBXGroup;
 			children = (
 				4957F64F215A1F3800384049 /* CheckListRowView.swift */,
 				4957F650215A1F3800384049 /* CheckListRow.swift */,
 				4957F651215A1F3800384049 /* CheckListRowView.xib */,
-			);
-			path = ListRow;
-			sourceTree = "<group>";
-		};
-		4957F652215A1F3800384049 /* CheckListRow */ = {
-			isa = PBXGroup;
-			children = (
+				4957F6B6215FF10A00384049 /* CheckListRowItemView.swift */,
+				4957F6B8215FF12B00384049 /* CheckListRowItemView.xib */,
 			);
 			path = CheckListRow;
 			sourceTree = "<group>";
@@ -557,6 +555,7 @@
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				4957F66E215A1F3800384049 /* CheckListRowView.xib in Resources */,
 				4957F66B215A1F3800384049 /* TextViewRowView.xib in Resources */,
+				4957F6B9215FF12B00384049 /* CheckListRowItemView.xib in Resources */,
 				4957F672215A1F3800384049 /* HintView.xib in Resources */,
 				4957F66F215A1F3800384049 /* ErrorView.xib in Resources */,
 			);
@@ -671,6 +670,7 @@
 				4957F6A8215C5A3B00384049 /* LoginViewController.swift in Sources */,
 				4957F670215A1F3800384049 /* ErrorView.swift in Sources */,
 				4957F6AE215C5A5900384049 /* AdditionalInfoViewController.swift in Sources */,
+				4957F6B7215FF10A00384049 /* CheckListRowItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

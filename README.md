@@ -24,7 +24,7 @@ It's a `UIView` subclass that contains a single `UIStackView` - it controls rend
 
 ### ... and a `Row`?
 
-It's a class that conforms to various `Row` protocols (`ValueRow`, `FocusableRow`...) so it can interact with it's `Form`, plus a plain old `UIView` and a Nib.
+It's a class that conforms to various `Row` protocols (`ValueRow`, `FocusableRow`...) so it can interact with its `Form`, plus a plain old `UIView` and a Nib.
 
 ## Examples
 
@@ -78,7 +78,7 @@ Forms can validate rows with a convenient block-chaining syntax:
 ```swift
 let isValid: Bool = validate(
 	row: emailRow,
-	{ $0.count > 0 } // The rows typed value (String) is passed into each validation block
+	{ $0.count > 0 }, // The rows typed value (String) is passed into each validation block
 	{ $0.contains "@" }
 )
 ```

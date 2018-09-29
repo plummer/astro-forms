@@ -13,7 +13,7 @@ import AstroForms
 class AdditionalInfoForm: Form, Themeable {
     
     enum AdditionalInfoRowTag: RowTag, Equatable {
-        case aboutMe
+        case aboutMe, favouriteMovie, characterLikeRow
     }
     
     var loginFormData: LoginFormData? {
@@ -38,7 +38,37 @@ class AdditionalInfoForm: Form, Themeable {
             
         }
         
+        let favouriteMovieRow = CheckListRow(
+            tag: AdditionalInfoRowTag.favouriteMovie,
+            selectionType: .single,
+            label: "Your Favourite Mars Mission",
+            options: [
+                "Mars Science Laboratory: Investigating Mars' habitability",
+                "Mars Orbiter Mission: Developing interplanetary mission technology",
+                "MAVEN: Examining the planet's atmosphere and water"
+            ]
+        )
+        
+        let charactersYouLikeRow = CheckListRow(
+            tag: AdditionalInfoRowTag.characterLikeRow,
+            selectionType: .multiple,
+            label: "Favourite Planets (Select multiple)",
+            options: [
+                "Mercury",
+                "Venus",
+                "Earth",
+                "Mars",
+                "Jupiter",
+                "Saturn",
+                "Uranus",
+                "Neptune",
+                "Pluto"
+            ]
+        )
+        
         add(aboutRow)
+        add(favouriteMovieRow)
+        add(charactersYouLikeRow)
         
     }
     

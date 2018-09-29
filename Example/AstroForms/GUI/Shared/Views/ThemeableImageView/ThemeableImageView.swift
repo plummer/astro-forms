@@ -12,13 +12,9 @@ import UIKit
 class ThemeableImageView: UIImageView, Themeable {
     
     var theme: AstroTheme? {
-        didSet {
-            updateTheme()
-        }
+        didSet { updateTheme() }
     }
     
-    func updateTheme() {
-        self.image = image(.formBackground)
-    }
+    func updateTheme() { self.image = image(.formBackground) }
     
 }

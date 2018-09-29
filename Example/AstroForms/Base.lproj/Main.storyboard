@@ -33,7 +33,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LdL-Ub-Upj" firstAttribute="top" secondItem="c7h-H6-Po4" secondAttribute="bottom" id="3gm-o1-LXw"/>
+                            <constraint firstAttribute="bottom" secondItem="c7h-H6-Po4" secondAttribute="bottom" id="3gm-o1-LXw"/>
                             <constraint firstItem="Q0V-g5-SrR" firstAttribute="top" secondItem="iDt-4T-gPn" secondAttribute="top" id="EDU-yb-yBc"/>
                             <constraint firstItem="c7h-H6-Po4" firstAttribute="leading" secondItem="iDt-4T-gPn" secondAttribute="leading" id="Ult-Jh-QzH"/>
                             <constraint firstAttribute="trailing" secondItem="Q0V-g5-SrR" secondAttribute="trailing" id="WUL-cg-33T"/>
@@ -70,7 +70,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5Ly-ms-KHR" secondAttribute="trailing" id="N8i-KX-I38"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5Ly-ms-KHR" secondAttribute="bottom" id="cWY-aw-mKd"/>
+                            <constraint firstAttribute="bottom" secondItem="5Ly-ms-KHR" secondAttribute="bottom" id="cWY-aw-mKd"/>
                             <constraint firstItem="5Ly-ms-KHR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ddk-nw-saf"/>
                             <constraint firstItem="5Ly-ms-KHR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="pT0-0H-X9D"/>
                         </constraints>
@@ -89,6 +89,10 @@
         <scene sceneID="bJK-ae-G2m">
             <objects>
                 <viewController id="tiL-95-scu" customClass="AdditionalInfoViewController" customModule="AstroForms_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JGS-Wo-Uy9"/>
+                        <viewControllerLayoutGuide type="bottom" id="ysJ-bH-d3L"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eyD-AL-d0W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
