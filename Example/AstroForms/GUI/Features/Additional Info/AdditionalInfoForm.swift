@@ -61,8 +61,7 @@ class AdditionalInfoForm: Form, Themeable {
                 "Jupiter",
                 "Saturn",
                 "Uranus",
-                "Neptune",
-                "Pluto"
+                "Neptune"
             ]
         )
         
