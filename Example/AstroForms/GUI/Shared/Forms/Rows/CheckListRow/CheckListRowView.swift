@@ -15,6 +15,8 @@ class CheckListRowView: UIView, Themeable {
     
     @IBOutlet weak var label: UILabel!
     
+    weak var row: CheckListRow?
+    
     @IBOutlet weak var checkListBackground: UIView!
     
     var theme: AstroTheme?
@@ -29,6 +31,11 @@ class CheckListRowView: UIView, Themeable {
             ($0 as? CheckListRowItemView)?.updateTheme()
         }
         
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        row?.updateCorners()
     }
     
 }

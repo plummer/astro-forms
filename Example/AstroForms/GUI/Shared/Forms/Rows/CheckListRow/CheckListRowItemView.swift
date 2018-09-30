@@ -13,7 +13,7 @@ protocol CheckListRowItemViewDelegate: class {
     
     func willSelect(_ view: CheckListRowItemView)
     
-    func updateCornersForViewChange(view: CheckListRowItemView)
+    func updateCorners()
     
 }
 
@@ -73,7 +73,7 @@ class CheckListRowItemView: UIView, Themeable {
         listPosition: ListPosition
     ) {
         
-        self.delegate?.updateCornersForViewChange(view: self)
+        self.delegate?.updateCorners()
         
         switch state {
             case .checked:

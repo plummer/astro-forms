@@ -104,16 +104,17 @@ class CheckListRow: Row, ValueRow, CheckListRowItemViewDelegate {
         
     }
     
-   func updateCornersForViewChange(view: CheckListRowItemView) {
-        
-        guard selectionType == .multiple else {
-            view.roundCorners(corners: [.allCorners])
-            return
-        }
-    
+   func updateCorners() {
+ 
         let views = self.view.stackView.arrangedSubviews.compactMap {
             _view -> CheckListRowItemView? in
             return _view as? CheckListRowItemView
+        }
+    
+        guard selectionType == .multiple else {
+            let selected =  views.filter { $0.isChecked == true }.first
+            selected?.roundCorners(corners: [.allCorners])
+            return
         }
     
         for (i, _view) in views.enumerated() {
@@ -166,6 +167,7 @@ class CheckListRow: Row, ValueRow, CheckListRowItemViewDelegate {
         self.init(tag: tag)
         self.selectionType = selectionType
         self.view.label.text = label
+        self.view.row = self
         self.addItems(labels: options)
         config?(self)
         
