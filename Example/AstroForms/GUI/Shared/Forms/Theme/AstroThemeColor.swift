@@ -45,7 +45,7 @@ extension Themeable {
     
     func color(_ requirement: ThemeColorType) -> UIColor {
         
-        let theme = getTheme()
+        let theme = getTheme() ?? .normal
         
         switch theme {
             

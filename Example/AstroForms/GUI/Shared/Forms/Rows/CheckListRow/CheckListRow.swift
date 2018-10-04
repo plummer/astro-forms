@@ -114,8 +114,8 @@ class CheckListRow: Row, ValueRow, CheckListRowItemViewDelegate {
         guard selectionType == .multiple else {
             
             views.forEach { $0.roundCorners(corners: [.allCorners])}
-            
             return
+            
         }
     
         for (i, _view) in views.enumerated() {
