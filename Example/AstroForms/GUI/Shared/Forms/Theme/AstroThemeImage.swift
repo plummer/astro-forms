@@ -20,7 +20,7 @@ enum AstroThemeImage {
 extension Themeable {
     func image(_ requirement: ThemeImageType) -> UIImage {
         
-        let theme = getTheme()
+        let theme = getTheme() ?? .normal
         
         switch theme  {
             
