@@ -46,6 +46,9 @@
 		4957F6B5215C786400384049 /* SlideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6B4215C786400384049 /* SlideNavigationController.swift */; };
 		4957F6B7215FF10A00384049 /* CheckListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6B6215FF10A00384049 /* CheckListRowItemView.swift */; };
 		4957F6B9215FF12B00384049 /* CheckListRowItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4957F6B8215FF12B00384049 /* CheckListRowItemView.xib */; };
+		49D389282160255800D99FB0 /* MapRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D389272160255800D99FB0 /* MapRow.swift */; };
+		49D3892A2160256000D99FB0 /* MapRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D389292160256000D99FB0 /* MapRowView.xib */; };
+		49D3892C2160258100D99FB0 /* MapRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3892B2160258100D99FB0 /* MapRowView.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -108,6 +111,9 @@
 		4957F6B4215C786400384049 /* SlideNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideNavigationController.swift; sourceTree = "<group>"; };
 		4957F6B6215FF10A00384049 /* CheckListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListRowItemView.swift; sourceTree = "<group>"; };
 		4957F6B8215FF12B00384049 /* CheckListRowItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListRowItemView.xib; sourceTree = "<group>"; };
+		49D389272160255800D99FB0 /* MapRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRow.swift; sourceTree = "<group>"; };
+		49D389292160256000D99FB0 /* MapRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapRowView.xib; sourceTree = "<group>"; };
+		49D3892B2160258100D99FB0 /* MapRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRowView.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AstroForms_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroForms_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 		4957F637215A1F3800384049 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
+				49D389262160255000D99FB0 /* MapRow */,
 				4957F638215A1F3800384049 /* TextFieldRow */,
 				4957F63D215A1F3800384049 /* ButtonRow */,
 				4957F641215A1F3800384049 /* CustomViewRow */,
@@ -367,6 +374,16 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		49D389262160255000D99FB0 /* MapRow */ = {
+			isa = PBXGroup;
+			children = (
+				49D389272160255800D99FB0 /* MapRow.swift */,
+				49D389292160256000D99FB0 /* MapRowView.xib */,
+				49D3892B2160258100D99FB0 /* MapRowView.swift */,
+			);
+			path = MapRow;
+			sourceTree = "<group>";
+		};
 		508CB67FC6A1509675A5829B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +567,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				4957F661215A1F3800384049 /* ButtonRowView.xib in Resources */,
 				4957F65F215A1F3800384049 /* TextFieldRowView.xib in Resources */,
+				49D3892A2160256000D99FB0 /* MapRowView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				4957F666215A1F3800384049 /* SwitchRowView.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -669,6 +687,8 @@
 				4957F660215A1F3800384049 /* ButtonRowView.swift in Sources */,
 				4957F6A8215C5A3B00384049 /* LoginViewController.swift in Sources */,
 				4957F670215A1F3800384049 /* ErrorView.swift in Sources */,
+				49D389282160255800D99FB0 /* MapRow.swift in Sources */,
+				49D3892C2160258100D99FB0 /* MapRowView.swift in Sources */,
 				4957F6AE215C5A5900384049 /* AdditionalInfoViewController.swift in Sources */,
 				4957F6B7215FF10A00384049 /* CheckListRowItemView.swift in Sources */,
 			);
