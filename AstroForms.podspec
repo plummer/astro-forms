@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AstroForms'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'An approachable iOS forms framework for building beautiful, reusable and easy to maintain forms.'
 
 # This description is used to generate tags and improve search results.
