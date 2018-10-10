@@ -14,8 +14,7 @@ import AstroForms
 protocol Themeable:
     ThemeableColorTraits,
     ThemeableImageTraits,
-    ThemeableTraits,
-    ThemeableView
+    ThemeableTraits
     where
         ThemeType == AstroTheme,
         ThemeColorType == AstroThemeColor,

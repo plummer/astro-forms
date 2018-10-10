@@ -11,7 +11,7 @@ import UIKit
 public protocol Theme { }
 
 /// The traits of having a theme associated.
-public protocol ThemeableTraits: AnyThemeableTraits {
+public protocol ThemeableTraits: AnyThemeableTraits, ThemeableView {
     
     associatedtype ThemeType: Theme
     
