@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// A UIImageView that conforms to the project Themeable protocol.
 class ThemeableImageView: UIImageView, Themeable {
     
     var theme: AstroTheme? {

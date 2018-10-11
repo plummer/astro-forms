@@ -18,9 +18,14 @@ enum AstroThemeImage {
 }
 
 extension Themeable {
+    
+    /// Generate a UIImage for each theme in the project.
+    ///
+    /// - Parameter requirement: The `ThemeImageType` requirement
+    /// - Returns: The UIIMage for the current theme.
     func image(_ requirement: ThemeImageType) -> UIImage {
         
-        let theme = getTheme()
+        let theme = getTheme() ?? .normal
         
         switch theme  {
             

@@ -43,9 +43,13 @@ enum AstroThemeColor {
 
 extension Themeable {
     
+    /// Generates a UIColor for the project's current theme.
+    ///
+    /// - Parameter requirement: The contextual color requirement
+    /// - Returns: The `UIColor` required for the given context and theme
     func color(_ requirement: ThemeColorType) -> UIColor {
         
-        let theme = getTheme()
+        let theme = getTheme() ?? .normal
         
         switch theme {
             

@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 extension UIImage {
+    
+    /// Generates a 1x1pt UIImage from a UIColor.
+    ///
+    /// - Parameter color: The intended colour
+    /// - Returns: The UIImage
     static func from(color: UIColor) -> UIImage {
         
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
@@ -26,4 +31,5 @@ extension UIImage {
         return image!
         
     }
+    
 }

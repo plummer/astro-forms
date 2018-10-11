@@ -9,6 +9,7 @@
 import Foundation
 import AstroForms
 
+/// The themes available to the project
 enum AstroTheme: Theme {
     case
         normal,

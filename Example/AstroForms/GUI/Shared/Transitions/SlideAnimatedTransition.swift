@@ -9,25 +9,33 @@
 import Foundation
 import UIKit
 
-/// A transition that simply slides view controllers, rather than the default `UINavigationController` animation.
+/// A transition that simply slides view controllers, rather than the
+/// default `UINavigationController` animation.
 ///
 /// Useful for view controller transitions with backgrounds that remain static.
 class SlideAnimatedTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     var direction: Direction = .right
+    var duration: TimeInterval = 0.35
     
     enum Direction {
         case left, right
     }
-    
-    convenience init(direction: Direction) {
+   
+    /// Initialise the transition with a left or right direction.
+    ///
+    /// - Parameters:
+    ///   - direction: The `Direction` from which the new view arrives.
+    ///   - duration: The duration of the transition
+    convenience init(direction: Direction, duration: TimeInterval = 0.35) {
         self.init()
         self.direction = direction
+        self.duration = duration
     }
     
     func transitionDuration(
         using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.35
+        return duration
     }
     
     func animateTransition(

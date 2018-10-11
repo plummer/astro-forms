@@ -112,9 +112,10 @@ class CheckListRow: Row, ValueRow, CheckListRowItemViewDelegate {
         }
     
         guard selectionType == .multiple else {
-            let selected =  views.filter { $0.isChecked == true }.first
-            selected?.roundCorners(corners: [.allCorners])
+            
+            views.forEach { $0.roundCorners(corners: [.allCorners])}
             return
+            
         }
     
         for (i, _view) in views.enumerated() {
