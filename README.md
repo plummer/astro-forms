@@ -2,7 +2,7 @@
 
 [![Bitrise App Page](https://app.bitrise.io/app/11b5791a9dab5b3c/status.svg?token=jFpCmx9nwy200940OcGbqA&branch=master)](https://app.bitrise.io/app/11b5791a9dab5b3c) [![Astro Forms Documentation](https://github.com/plummer/astro-docs/blob/master/assets/docs-button.png)](https://www.astroforms.com)
 
-[![Astro Forms is an approachable iOS forms framework for building beautiful, reusable and easy to maintain forms. Type Safe Row Access, Validation, Manage Multiple Themes, Custom Focus Rects, Keyboard Management](https://github.com/plummer/astro-docs/blob/master/assets/main-repo-readme-header.jpg)](https://www.astroforms.com)
+[![Astro Forms is an approachable iOS forms framework for building beautiful, reusable and easy to maintain forms. Type Safe Row Access, Validation, Manage Multiple Themes, Custom Focus Rects, Keyboard Management](https://user-images.githubusercontent.com/580919/46787465-01d1d380-cd7b-11e8-8f23-1c1050a25270.jpg)](https://www.astroforms.com)
 
 | ![qyky5d 300x534](https://user-images.githubusercontent.com/580919/46787060-0ea1f780-cd7a-11e8-8196-cce42033e893.gif) | ![w7y7v4 300x534](https://user-images.githubusercontent.com/580919/46787062-0ea1f780-cd7a-11e8-9d96-28d22f436651.gif) | ![wmqmxm 300x534](https://user-images.githubusercontent.com/580919/46787064-0ea1f780-cd7a-11e8-9087-928870b451e2.gif) |
 | ------------- | ------------- | ------------- |
