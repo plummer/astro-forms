@@ -40,7 +40,11 @@ class MapRow: Row, ValueRow {
     
     var valueHasStartedEditing: Bool = false
     
-    init(tag: RowTag, location: CLLocationCoordinate2D, config: ((MapRow) -> Void)? = nil) {
+    init(
+        tag: RowTag,
+        location: CLLocationCoordinate2D,
+        config: ((MapRow) -> Void)? = nil
+    ) {
         
         let view: MapRowView = View.fromXib()
         self.tag = tag
