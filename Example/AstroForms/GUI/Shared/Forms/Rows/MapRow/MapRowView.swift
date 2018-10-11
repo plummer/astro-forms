@@ -8,9 +8,20 @@
 
 import Foundation
 import UIKit
+import MapKit
 
-class MapRowView: UIView {
+class MapRowView: UIView, Themeable {
+    
+    var theme: AstroTheme?
     
     weak var row: MapRow?
+    @IBOutlet weak var marker: UIImageView!
+    
+    @IBOutlet weak var map: MKMapView!
+    
+    func updateTheme() {
+        self.backgroundColor = color(.primaryBackground)
+        marker.tintColor = color(.primaryTint)
+    }
     
 }

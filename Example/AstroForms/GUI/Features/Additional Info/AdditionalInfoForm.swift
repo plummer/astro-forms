@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 import AstroForms
+import CoreLocation
 
 class AdditionalInfoForm: Form, Themeable {
     
     enum AdditionalInfoRowTag: RowTag, Equatable {
-        case aboutMe, favouriteMovie, characterLikeRow
+        case aboutMe, favouriteMovie, characterLikeRow, location
     }
     
     var loginFormData: LoginFormData? {
@@ -37,6 +38,14 @@ class AdditionalInfoForm: Form, Themeable {
             $0.view.label.text = "Your Bio"
             
         }
+        
+        let mapRow = MapRow(
+            tag: AdditionalInfoRowTag.location,
+            location: CLLocationCoordinate2D(
+                latitude: -37.8136,
+                longitude: 144.9631
+            )
+        )
         
         let favouriteMovieRow = CheckListRow(
             tag: AdditionalInfoRowTag.favouriteMovie,
@@ -65,6 +74,7 @@ class AdditionalInfoForm: Form, Themeable {
             ]
         )
         
+        add(mapRow)
         add(aboutRow)
         add(favouriteMovieRow)
         add(charactersYouLikeRow)

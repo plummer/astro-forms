@@ -19,7 +19,17 @@ class MapRow: Row, ValueRow {
     
     var view: MapRowView
     
-    var value: CLLocationCoordinate2D
+    var value: CLLocationCoordinate2D {
+        
+        set {
+            self.view.map.centerCoordinate = newValue
+        }
+        
+        get {
+            return self.view.map.centerCoordinate
+        }
+        
+    }
     
     var tag: RowTag
     
