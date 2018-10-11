@@ -15,6 +15,7 @@ class MapRowView: UIView, Themeable {
     var theme: AstroTheme?
     
     weak var row: MapRow?
+    
     @IBOutlet weak var marker: UIImageView!
     
     @IBOutlet weak var map: MKMapView!

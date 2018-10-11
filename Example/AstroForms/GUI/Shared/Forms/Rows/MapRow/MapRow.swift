@@ -23,6 +23,7 @@ class MapRow: Row, ValueRow {
         
         set {
             self.view.map.centerCoordinate = newValue
+            valueDidEndEditing()
         }
         
         get {
