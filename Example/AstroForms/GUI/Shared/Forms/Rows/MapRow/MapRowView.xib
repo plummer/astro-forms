@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MapRowView" customModule="AstroForms_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XQ4-XZ-1Os">
+                    <rect key="frame" x="20" y="40" width="335" height="627"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="Fwp-t7-iID"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </mapView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location-marker" translatesAutoresizingMaskIntoConstraints="NO" id="ds5-9U-X4k">
+                    <rect key="frame" x="177.5" y="329.5" width="20" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="KrX-5C-2rH"/>
+                        <constraint firstAttribute="height" constant="24" id="zeu-mp-ZZx"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ds5-9U-X4k" firstAttribute="bottom" secondItem="XQ4-XZ-1Os" secondAttribute="centerY" id="3gR-Ib-in0"/>
+                <constraint firstItem="XQ4-XZ-1Os" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="3ig-tH-B8g"/>
+                <constraint firstItem="ds5-9U-X4k" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MEh-Y9-3k5"/>
+                <constraint firstItem="XQ4-XZ-1Os" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="OY8-b2-M5j"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XQ4-XZ-1Os" secondAttribute="trailing" constant="20" id="ais-or-NkP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XQ4-XZ-1Os" secondAttribute="bottom" id="zAt-O6-Kib"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="map" destination="XQ4-XZ-1Os" id="9mW-Ra-bPS"/>
+                <outlet property="marker" destination="ds5-9U-X4k" id="PvQ-jL-MG8"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="Location-marker" width="20" height="24"/>
+    </resources>
+</document>
