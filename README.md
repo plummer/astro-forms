@@ -4,6 +4,9 @@
 
 [![Astro Forms is an approachable iOS forms framework for building beautiful, reusable and easy to maintain forms. Type Safe Row Access, Validation, Manage Multiple Themes, Custom Focus Rects, Keyboard Management](https://github.com/plummer/astro-docs/blob/master/assets/main-repo-readme-header.jpg)](https://www.astroforms.com)
 
+| ![qyky5d 300x534](https://user-images.githubusercontent.com/580919/46787060-0ea1f780-cd7a-11e8-8196-cce42033e893.gif) | ![w7y7v4 300x534](https://user-images.githubusercontent.com/580919/46787062-0ea1f780-cd7a-11e8-9d96-28d22f436651.gif) | ![wmqmxm 300x534](https://user-images.githubusercontent.com/580919/46787064-0ea1f780-cd7a-11e8-9087-928870b451e2.gif) |
+| ------------- | ------------- | ------------- |
+
 ## Getting Started
 
 For a getting started guide, reference docs and included forms, head to the [documentation](https://www.astroforms.com). 
