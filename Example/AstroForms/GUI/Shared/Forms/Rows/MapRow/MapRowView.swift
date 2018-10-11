@@ -18,11 +18,14 @@ class MapRowView: UIView, Themeable {
     
     @IBOutlet weak var marker: UIImageView!
     
+    @IBOutlet weak var label: UILabel!
+    
     @IBOutlet weak var map: MKMapView!
     
     func updateTheme() {
-        self.backgroundColor = color(.primaryBackground)
+        backgroundColor = color(.primaryBackground)
         marker.tintColor = color(.primaryTint)
+        label.textColor = color(.inputLabelColor)
     }
     
 }

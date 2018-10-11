@@ -14,7 +14,7 @@ import CoreLocation
 class AdditionalInfoForm: Form, Themeable {
     
     enum AdditionalInfoRowTag: RowTag, Equatable {
-        case aboutMe, favouriteMovie, characterLikeRow, location
+        case aboutMe, favouriteMovie, characterLikeRow, location, submit
     }
     
     var loginFormData: LoginFormData? {
@@ -57,7 +57,7 @@ class AdditionalInfoForm: Form, Themeable {
                 "MAVEN: Examining the planet's atmosphere and water"
             ]
         )
-        
+
         let charactersYouLikeRow = CheckListRow(
             tag: AdditionalInfoRowTag.characterLikeRow,
             selectionType: .multiple,
@@ -74,10 +74,15 @@ class AdditionalInfoForm: Form, Themeable {
             ]
         )
         
-        add(mapRow)
-        add(aboutRow)
+        let submitRow = ButtonRow(tag: AdditionalInfoRowTag.submit) {
+            $0.title = "Submit"
+        }
+        
         add(favouriteMovieRow)
+        add(aboutRow)
+        add(mapRow)
         add(charactersYouLikeRow)
+        add(submitRow)
         
     }
     
